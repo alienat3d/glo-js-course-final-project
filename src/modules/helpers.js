@@ -1,3 +1,5 @@
 const toggleActiveClass = (element, className) => element.classList.toggle(className);
 
-export { toggleActiveClass };
+const measureWindowWidth = () => document.documentElement.clientWidth;
+
+export { toggleActiveClass, measureWindowWidth };

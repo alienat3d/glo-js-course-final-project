@@ -1,3 +1,5 @@
 Improvements:
+  [Header Nav Menu]:
   - CSS replace 'translate3d's with 'translateX';
+  - increase the font size for narrow screens;
   -
