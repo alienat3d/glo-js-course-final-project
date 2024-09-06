@@ -1,7 +1,7 @@
 {
   "name": "relax-live",
   "version": "1.0.0",
-  "description": "Pet-Project: List of Super Heroes with Description",
+  "description": "Certification project: A website for renovation service company + Admin panel to it",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode=production",

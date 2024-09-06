@@ -1,3 +1,3 @@
-import { testFunc } from "./modules/test";
+import { headerPhonesAccordionFunc } from "./modules/header-phones-accordion";
 
-testFunc(1, 2);
+headerPhonesAccordionFunc();
