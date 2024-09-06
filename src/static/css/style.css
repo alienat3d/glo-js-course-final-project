@@ -487,8 +487,12 @@ template, [hidden] {
 
 .header-contacts__arrow {
     cursor: pointer;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
+    -webkit-transition: transform 0.5s;
+    transition: transform 0.5s;
+}
+
+.header-contacts__arrow.header-contacts__arrow--active {
+  transform: rotate(180deg);
 }
 
 .header-contacts__arrow img {

@@ -1,3 +1,3 @@
-const changeActiveClass = (element, className) => element.classList.toggle(className);
+const toggleActiveClass = (element, className) => element.classList.toggle(className);
 
-export { changeActiveClass };
+export { toggleActiveClass };
