@@ -496,7 +496,7 @@ template, [hidden] {
     margin-left: 5px;
 }
 
-.header-contacts__messagers {
+.header-contacts__messengers {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -508,7 +508,7 @@ template, [hidden] {
     width: 134px;
 }
 
-.header-contacts__messagers-descr {
+.header-contacts__messengers-descr {
     font-size: 11px;
 }
 
