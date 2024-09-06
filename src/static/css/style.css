@@ -491,10 +491,6 @@ template, [hidden] {
     transition: transform 0.5s;
 }
 
-.header-contacts__arrow.header-contacts__arrow--active {
-  transform: rotate(180deg);
-}
-
 .header-contacts__arrow img {
     margin-top: 12px;
     margin-left: 5px;

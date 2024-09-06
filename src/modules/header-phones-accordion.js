@@ -8,7 +8,7 @@ export const headerPhonesAccordionFunc = () => {
 	contactsBlock.addEventListener('click', (evt) => {
     if (evt.target.closest('.header-contacts__arrow')) {
       toggleActiveClass(accordionBlock, 'header-accord-active');
-      toggleActiveClass(arrowButton, 'header-contacts__arrow--active');
+      toggleActiveClass(arrowButton, 'header-accord-arrow-active');
     }
 	});
 }
