@@ -2069,7 +2069,7 @@ template,
 .feedback-block__form label:first-child:after {
   position: absolute;
   bottom: 0;
-  left: -30px;
+  left: -8px;
   width: 553px;
   height: 2px;
   content: "";

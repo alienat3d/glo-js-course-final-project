@@ -2,8 +2,9 @@ const toggleActiveClass = (element, className) => element.classList.toggle(class
 
 const measureWindowWidth = () => document.documentElement.clientWidth;
 
-const phoneSymbolsOnly = () => {
-	const regExp = /[^\d\(\)\-]+/g;
+const phoneSymbolsOnly = (input) => {
+  return input.value = input.value.replace(/[^\d]+/g, '')
+    .replace(/^(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})$/, '+$1 ($2) $3-$4-$5');
 }
 
-export { toggleActiveClass, measureWindowWidth };
+export { toggleActiveClass, measureWindowWidth, phoneSymbolsOnly };
