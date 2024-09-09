@@ -4,9 +4,6 @@ export const modifyPhoneInputsFunc = () => {
   const phoneInputs = document.querySelectorAll('input[name="phone"]');
 
   phoneInputs.forEach(input =>
-    input.addEventListener('input', () => {
-      phoneSymbolsOnly(input);
-      console.log(input.value.length);
-    })
+    input.addEventListener('input', () => phoneSymbolsOnly(input))
   );
 }

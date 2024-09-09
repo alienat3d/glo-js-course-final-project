@@ -9008,3 +9008,172 @@ strong {
 .slider-dots {
   display: none;
 }
+
+.sk-chase-wrapper,
+.status-info-block {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%)
+}
+
+.main-form .sk-chase-wrapper,
+.main-form .status-info-block {
+  bottom: 9px
+}
+
+.popup .sk-chase-wrapper {
+  bottom: -44px
+}
+
+.footer-form .sk-chase-wrapper,
+.footer-form .status-info-block {
+  bottom: -39px
+}
+
+.sk-chase {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  animation: 2.5s linear infinite both sk-chase
+}
+
+.sk-chase-dot {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: 2s ease-in-out infinite both sk-chase-dot
+}
+
+.sk-chase-dot:before {
+  content: '';
+  display: block;
+  width: 25%;
+  height: 25%;
+  background: -webkit-gradient(linear, left top, right top, from(#F48922), to(#FFB015));
+  background: linear-gradient(90deg, #F48922 0%, #FFB015 100%);
+  border-radius: 100%;
+  animation: 2s ease-in-out infinite both sk-chase-dot-before
+}
+
+.sk-chase-dot:first-child,
+.sk-chase-dot:first-child:before {
+  animation-delay: -1.1s
+}
+
+.sk-chase-dot:nth-child(2),
+.sk-chase-dot:nth-child(2):before {
+  animation-delay: -1s
+}
+
+.sk-chase-dot:nth-child(3),
+.sk-chase-dot:nth-child(3):before {
+  animation-delay: -.9s
+}
+
+.sk-chase-dot:nth-child(4),
+.sk-chase-dot:nth-child(4):before {
+  animation-delay: -.8s
+}
+
+.sk-chase-dot:nth-child(5),
+.sk-chase-dot:nth-child(5):before {
+  animation-delay: -.7s
+}
+
+.sk-chase-dot:nth-child(6),
+.sk-chase-dot:nth-child(6):before {
+  animation-delay: -.6s
+}
+
+@keyframes sk-chase {
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes sk-chase-dot {
+
+  100%,
+  80% {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes sk-chase-dot-before {
+  50% {
+    transform: scale(.4)
+  }
+
+  0%,
+  100% {
+    transform: scale(1)
+  }
+}
+
+.error {
+  outline: #f28d99 solid 2px;
+  outline-offset: 2px
+}
+
+.status-info-block {
+  font-size: 20px
+}
+
+.status-info-block::before {
+  content: '';
+  margin-left: -30px;
+  margin-right: 5px;
+  display: inline-block;
+  vertical-align: text-bottom;
+  width: 25px;
+  height: 25px;
+  background: url("../images/icon-success.svg") center/contain no-repeat
+}
+
+.error-message.status-info-block::before {
+  background-image: url("../images/icon-error.svg")
+}
+
+.popup .main-form .status-info-block {
+  bottom: -53px;
+  width: 246px;
+  font-size: 15px;
+  color: #fff
+}
+
+.footer-form .status-info-block {
+  width: 100%
+}
+
+.main-form .form-btn {
+  margin-bottom: 20px
+}
+
+.sk-chase-wrapper,
+.status-info-block {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%)
+}
+
+.main-form .sk-chase-wrapper,
+.main-form .status-info-block {
+  bottom: 9px
+}
+
+.popup .sk-chase-wrapper {
+  bottom: -44px
+}
+
+.footer-form .sk-chase-wrapper,
+.footer-form .status-info-block {
+  bottom: -39px
+}
+
+form {
+  position: relative
+}
