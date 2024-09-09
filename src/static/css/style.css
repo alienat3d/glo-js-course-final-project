@@ -9001,7 +9001,8 @@ strong {
   transform: scale(1, -1);
 }
 
-.popup-repair-types-active {
+.popup-repair-types-active,
+.popup.popup-privacy-active {
   visibility: visible;
 }
 

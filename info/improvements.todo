@@ -11,3 +11,8 @@ Improvements:
 
   [Form Data Send to Server]:
   - Add user notification & loading animation after sending data to server;
+
+  [Privacy Popup]:
+  - Add overflow-y prop to body, when privacy popup shows, also compensate the vertical scrollbar width, so that window doesn’t twitch;
+  - Add smooth appearing & disappearing animation;
+  - Close popup by clicking outside of the popup’s window;
