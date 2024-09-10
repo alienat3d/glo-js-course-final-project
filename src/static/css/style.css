@@ -1184,6 +1184,11 @@ template,
   }
 }
 
+.formula-row-1,
+.formula-row-2 {
+  z-index: 1;
+}
+
 .formula .row {
   height: 100%;
   min-height: 95px;
@@ -1351,6 +1356,11 @@ template,
   opacity: 0.1;
 }
 
+.upside-down .formula-item-popup::before {
+  top: -19px;
+  transform: rotate(180deg);
+}
+
 .formula-item-popup p {
   padding-bottom: 15px;
 }
@@ -1389,6 +1399,21 @@ template,
 
 .formula-item-popup-01 {
   min-height: 146px;
+}
+
+.upside-down .formula-item-popup-01 {
+  bottom: -295%;
+}
+
+.upside-down .formula-item-popup-02,
+.upside-down .formula-item-popup-04,
+.upside-down .formula-item-popup-06 {
+  bottom: -350%;
+}
+
+.upside-down .formula-item-popup-03,
+.upside-down .formula-item-popup-05 {
+  bottom: -435%;
 }
 
 @media (max-width: 575px) {
@@ -8680,7 +8705,7 @@ strong {
   font-size: 30px;
   line-height: 35px;
   color: #322823;
-  z-index: 0;
+  z-index: -2;
 }
 
 @media (max-width: 1024px) {

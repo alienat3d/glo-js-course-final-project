@@ -5,6 +5,7 @@ import { servicesPopupFunc } from "./modules/services-popup";
 import { modifyPhoneInputsFunc } from "./modules/modify-phone-inputs";
 import { sendFormFunc } from "./modules/send-form";
 import { privacyPopupFunc } from "./modules/privacy-popup";
+import { formulaTooltipsFunc } from "./modules/formula-tooltips";
 
 headerPhonesAccordionFunc();
 headerMenuRolloutFunc();
@@ -13,3 +14,4 @@ servicesPopupFunc();
 modifyPhoneInputsFunc();
 sendFormFunc();
 privacyPopupFunc();
+formulaTooltipsFunc();
