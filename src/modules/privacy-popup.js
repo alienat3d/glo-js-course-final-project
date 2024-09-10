@@ -1,4 +1,4 @@
-import { toggleActiveClass } from "./helpers";
+import { modalAppearAnimation, modalDisappearAnimation } from "./helpers";
 
 export const privacyPopupFunc = () => {
   const privacyButtons = document.querySelectorAll('span.link-privacy');
@@ -7,8 +7,8 @@ export const privacyPopupFunc = () => {
 
   privacyButtons.forEach(button =>
     button.addEventListener('click', () =>
-      toggleActiveClass(privacyPopup, 'popup-privacy-active'))
+      modalAppearAnimation(privacyPopup))
   );
 
-  closeButton.addEventListener('click', () => toggleActiveClass(privacyPopup, 'popup-privacy-active'));
+  closeButton.addEventListener('click', () => modalDisappearAnimation(privacyPopup));
 }

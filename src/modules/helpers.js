@@ -17,7 +17,7 @@ const modalAppearAnimation = (modal) => {
 };
 
 const modalDisappearAnimation = (modal) => {
-  let counter = 10;
+  let counter = 9;
   const step = () => {
     if (counter > 0) {
       modal.style.opacity = `0.${counter--}`;
@@ -33,4 +33,10 @@ const modalDisappearAnimation = (modal) => {
 const phoneSymbolsOnly = (input) => input.value = input.value.replace(/[^\d]+/g, '')
   .replace(/^(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})$/, '+$1 ($2) $3-$4-$5');
 
-export { toggleActiveClass, measureWindowWidth, phoneSymbolsOnly, modalAppearAnimation, modalDisappearAnimation };
+export {
+  toggleActiveClass,
+  measureWindowWidth,
+  phoneSymbolsOnly,
+  modalAppearAnimation,
+  modalDisappearAnimation
+};
