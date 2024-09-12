@@ -2,7 +2,7 @@ const toggleActiveClass = (element, className) => element.classList.toggle(class
 
 const measureWindowWidth = () => document.documentElement.clientWidth;
 
-const modalAppearAnimation = (modal) => {
+const modalAppearAnimation = (modal, activeClass) => {
   let counter = 0;
   const step = () => {
     if (counter < 10) {
@@ -16,7 +16,7 @@ const modalAppearAnimation = (modal) => {
   requestAnimationFrame(step);
 };
 
-const modalDisappearAnimation = (modal) => {
+const modalDisappearAnimation = (modal, activeClass) => {
   let counter = 9;
   const step = () => {
     if (counter > 0) {

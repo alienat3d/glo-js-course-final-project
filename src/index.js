@@ -8,14 +8,14 @@ import { privacyPopupFunc } from "./modules/privacy-popup";
 import { formulaTooltipsFunc } from "./modules/formula-tooltips";
 import { sliderFunc } from "./modules/slider";
 
-// headerPhonesAccordionFunc();
-// headerMenuRolloutFunc();
-// smoothScrollToFunc();
-// servicesPopupFunc();
-// modifyPhoneInputsFunc();
-// sendFormFunc();
-// privacyPopupFunc();
-// formulaTooltipsFunc();
+headerPhonesAccordionFunc();
+headerMenuRolloutFunc();
+smoothScrollToFunc();
+servicesPopupFunc();
+modifyPhoneInputsFunc();
+sendFormFunc();
+privacyPopupFunc();
+formulaTooltipsFunc();
 sliderFunc('.formula-slider-wrap', '.formula-item');
 
 // window.addEventListener("DOMContentLoaded", () => console.warn('Website is loaded.'));

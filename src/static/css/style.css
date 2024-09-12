@@ -7059,6 +7059,12 @@ div.wave-block:nth-child(17):after {
   z-index: 5;
 }
 
+@media (max-width: 1025px) {
+  .slider-arrow{
+    top: 52%;
+  }
+}
+
 @media (max-width: 575px) {
   .slider-arrow {
     width: 24px;
@@ -8199,7 +8205,7 @@ div.wave-block:nth-child(17):after {
 @media (max-width: 864px) {
   #formula-arrow_left {
     /* top: 42%; */
-    top: 53%;
+    top: 52%;
     left: 25px;
   }
 }
@@ -8224,7 +8230,7 @@ div.wave-block:nth-child(17):after {
 @media (max-width: 864px) {
   #formula-arrow_right {
     /* top: 42%; */
-    top: 53%;
+    top: 52%;
     right: 25px;
   }
 }

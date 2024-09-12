@@ -3,7 +3,7 @@ export const sliderFunc = (containerClass, slideClass) => {
 
   const sliderBlock = document.querySelector(containerClass);
   if (sliderBlock === null) return;
-  
+
   const slides = sliderBlock.querySelectorAll(slideClass);
   const sliderWrapper = sliderBlock.querySelector('.formula-slider');
 
