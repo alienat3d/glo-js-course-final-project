@@ -4563,7 +4563,6 @@ div.wave-block:nth-child(17):after {
   }
 }
 
-
 .footer_noncolor {
   padding: 26px 0;
   margin-top: 40px;
@@ -8197,14 +8196,12 @@ div.wave-block:nth-child(17):after {
   }
 }
 
-
 #formula-arrow_left {
   left: -17px;
 }
 
 @media (max-width: 864px) {
   #formula-arrow_left {
-    /* top: 42%; */
     top: 52%;
     left: 25px;
   }
@@ -8229,7 +8226,6 @@ div.wave-block:nth-child(17):after {
 
 @media (max-width: 864px) {
   #formula-arrow_right {
-    /* top: 42%; */
     top: 52%;
     right: 25px;
   }

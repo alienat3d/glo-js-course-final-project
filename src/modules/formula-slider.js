@@ -1,4 +1,4 @@
-export const sliderFunc = (containerClass, slideClass) => {
+export const formulaSliderFunc = (containerClass, slideClass) => {
   if (!containerClass || !slideClass) return;
 
   const sliderBlock = document.querySelector(containerClass);
