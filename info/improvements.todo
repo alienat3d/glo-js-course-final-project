@@ -16,3 +16,8 @@ Improvements:
   - Add overflow-y prop to body, when privacy popup shows, also compensate the vertical scrollbar width, so that window doesn’t twitch;
   - Add smooth appearing & disappearing animation;
   - Close popup by clicking outside of the popup’s window;
+
+  [Repair Types Section]:
+  - Make showing animation more smooth & slow;
+
+

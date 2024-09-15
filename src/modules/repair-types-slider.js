@@ -1,53 +1,48 @@
+import { modalAppearAnimation, modalDisappearAnimation } from "./helpers";
+
 export const repairTypesSliderFunc = (containerClass, slideClass) => {
   if (!containerClass || !slideClass) return;
 
   const sliderBlock = document.querySelector(containerClass);
+
   if (sliderBlock === null) return;
 
+  let TIME_INTERVAL = 3;
+
   const slides = sliderBlock.querySelectorAll(slideClass);
-  const sliderWrapper = sliderBlock.querySelector('.formula-slider');
 
   let currentSlide = 0;
+  let interval;
 
-  // const showHideItems = (sliderContainer, slides, currentIdx) => {
-  //   sliderWrapper.innerHTML = '';
-  //   const visibleSlides = [];
-  //   if (currentIdx === 0) {
-  //     slides.forEach((slide, idx, array) => {
-  //       slide.classList.remove('active-item');
-  //       if (currentIdx === 0 && (idx === currentIdx || idx === array.length - 1 || idx === currentIdx + 1)) {
-  //         array[currentIdx].classList.add('active-item');
-  //         visibleSlides.push(slide);
-  //       }
-  //     })
-  //     visibleSlides.splice(0, 1, visibleSlides.splice(1, 1, visibleSlides[0])[0]);
-  //     visibleSlides.splice(2, 1, visibleSlides.splice(0, 1, visibleSlides[2])[0]);
-  //     visibleSlides.forEach(slide => sliderContainer.insertAdjacentElement('beforeend', slide));
-  //   } else if (currentIdx === slides.length - 1) {
-  //     slides.forEach((slide, idx, array) => {
-  //       slide.classList.remove('active-item');
-  //       if (idx === currentIdx || idx === currentIdx - 1 || idx === 0) {
-  //         array[currentIdx].classList.add('active-item');
-  //         visibleSlides.push(slide);
-  //       }
-  //     })
-  //     visibleSlides.splice(1, 1, visibleSlides.splice(2, 1, visibleSlides[1])[0]);
-  //     visibleSlides.splice(0, 1, visibleSlides.splice(2, 1, visibleSlides[0])[0]);
-  //     visibleSlides.forEach(slide => sliderContainer.insertAdjacentElement('beforeend', slide));
-  //   } else if (currentIdx > 0 || currentIdx < array.length - 2) {
-  //     slides.forEach((slide, idx, array) => {
-  //       slide.classList.remove('active-item');
-  //       if (idx === currentIdx || idx === currentIdx - 1 || idx === currentIdx + 1) {
-  //         array[currentIdx].classList.add('active-item');
-  //         sliderContainer.insertAdjacentElement('beforeend', slide);
-  //       }
-  //     })
-  //   }
-  // }
+	const prevSlide = (elems, idx, activeClass) => {
+    modalDisappearAnimation(elems[idx]);
+    elems[idx].classList.add(activeClass);
+  };
+	const nextSlide = (elems, idx, activeClass) => {
+    elems[idx].classList.remove(activeClass);
+    modalAppearAnimation(elems[idx]);
+  };
+
+	const autoSlider = () => {
+		prevSlide(slides, currentSlide, 'hide');
+		currentSlide++;
+		if (currentSlide >= slides.length) currentSlide = 0;
+		nextSlide(slides, currentSlide, 'hide');
+	}
+
+	TIME_INTERVAL = TIME_INTERVAL * 1000;
+
+	const startSlider = (timer) => {
+		interval = setInterval(autoSlider, timer);
+	}
+	const stopSlider = () => {
+		clearInterval(interval);
+	}
 
   sliderBlock.addEventListener('click', (evt) => {
     evt.preventDefault();
     if (!evt.target.closest('.slider-arrow')) return;
+    prevSlide(slides, currentSlide, 'hide');
     if (evt.target.closest('.slider-arrow_left')) {
       currentSlide--;
     } else if (evt.target.closest('.slider-arrow_right')) {
@@ -56,8 +51,15 @@ export const repairTypesSliderFunc = (containerClass, slideClass) => {
     if (currentSlide >= slides.length) currentSlide = 0;
     if (currentSlide < 0) currentSlide = slides.length - 1;
 
-    // showHideItems(sliderWrapper, slides, currentSlide);
+    nextSlide(slides, currentSlide, 'hide');
   })
 
-  // showHideItems(sliderWrapper, slides, currentSlide);
+	sliderBlock.addEventListener('mouseenter', (evt) => {
+		if (evt.target.matches('.slider-arrow')) stopSlider(TIME_INTERVAL);
+	}, true)
+	sliderBlock.addEventListener('mouseleave', (evt) => {
+		if (evt.target.matches('.slider-arrow')) startSlider(TIME_INTERVAL);
+	}, true)
+
+	startSlider(TIME_INTERVAL);
 }

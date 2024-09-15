@@ -405,22 +405,22 @@
           <div class="repair-types-slider">
             <div class="types-repair1">
               <div class="repair-types-slider__slide">
-                <img src="./images/repair-types/cosmetic.webp" alt="Выравнивание стены шпаклеванием">
-              </div>
-              <div class="repair-types-slider__slide">
-                <img src="./images/repair-types/electrics.webp" alt="Проведение проводов к розеткам">
-              </div>
-              <div class="repair-types-slider__slide">
                 <img src="./images/repair-types/squaring-up.avif" alt="Шпаклевание и выравнивание стены">
               </div>
-              <div class="repair-types-slider__slide">
+              <div class="repair-types-slider__slide hide">
+                <img src="./images/repair-types/electrics.webp" alt="Проведение проводов к розеткам">
+              </div>
+              <div class="repair-types-slider__slide hide">
+                <img src="./images/repair-types/cosmetic.webp" alt="Выравнивание стены шпаклеванием">
+              </div>
+              <div class="repair-types-slider__slide hide">
                 <img src="./images/repair-types/wall-papering-1.avif" alt="Поклейка обоев">
               </div>
-              <div class="repair-types-slider__slide">
+              <div class="repair-types-slider__slide hide">
                 <img src="./images/repair-types/wall-papering-2.avif" alt="Поклейка обоев">
               </div>
             </div>
-            <div class="types-repair2">
+            <div class="types-repair2 hide">
               <div class="repair-types-slider__slide">
                 <img src="./images/repair-types/painting-work-4.webp" alt="Покраска двери новым слоем краски">
               </div>
@@ -437,7 +437,7 @@
                 <img src="./images/repair-types/removing-wall-in-bathroom-2.webp" alt="Замена плитки в ванной комнате">
               </div>
             </div>
-            <div class="types-repair3">
+            <div class="types-repair3 hide">
               <div class="repair-types-slider__slide">
                 <img src="./images/repair-types/capital.webp" alt="Разные ремонтные работы">
               </div>
@@ -454,7 +454,7 @@
                 <img src="./images/repair-types/removing-wall.webp" alt="Удаление стены">
               </div>
             </div>
-            <div class="types-repair4">
+            <div class="types-repair4 hide">
               <div class="repair-types-slider__slide">
                 <img src="./images/repair-types/installing-windows.webp" alt="Установка стеклопакета">
               </div>
@@ -468,24 +468,26 @@
                 <img src="./images/repair-types/western-style-renovation.webp" alt="Готовый евроремонт кухни">
               </div>
             </div>
-            <div class="types-repair5">
-              <div class="repair-types-slider__slide"></div>
-                <img src="./images/repair-types/tacking-nail.avif" alt="Измерение проёма в стене для последующего замуровывания">
-              </div>
+            <div class="types-repair5 hide">
               <div class="repair-types-slider__slide">
                 <img src="./images/repair-types/cutting-plank.avif" alt="Обрезка доски электролобзиком">
               </div>
               <div class="repair-types-slider__slide">
-                <img src="./images/repair-types/installing-lightning-rod-conductor.webp" alt="Установка громоотвода на крышу">
+                <img src="./images/repair-types/removing-wall-in-bathroom.webp" alt="Ремонт стен ванной комнаты">
+              </div>
+              <div class="repair-types-slider__slide">
+                <img src="./images/repair-types/tacking-nail.avif"
+                  alt="Измерение проёма в стене для последующего замуровывания">
+              </div>
+              <div class="repair-types-slider__slide">
+                <img src="./images/repair-types/installing-lightning-rod-conductor.webp"
+                  alt="Установка громоотвода на крышу">
               </div>
               <div class="repair-types-slider__slide">
                 <img src="./images/repair-types/roof-decking.webp" alt="Кровельные работы">
               </div>
               <div class="repair-types-slider__slide">
                 <img src="./images/repair-types/roof-decking-2.webp" alt="Кровельные работы">
-              </div>
-              <div class="repair-types-slider__slide">
-                <img src="./images/repair-types/removing-wall-in-bathroom.webp" alt="Ремонт стен ванной комнаты">
               </div>
             </div>
           </div><!-- /.repair-types-slider -->
@@ -511,13 +513,15 @@
                 fill="#322823"></path>
             </svg>
           </div>
-          <div class="link-list link-list-repair desktop-hide"><a>Полный список услуг и цен
+          <div class="link-list link-list-repair desktop-hide">
+            <a>Полный список услуг и цен
               <svg width="17" height="16" fill="none" viewBox="0 0 17 16" preserveAspectRatio="xMinYMin meet">
                 <path
                   d="M16.207 8.707a1 1 0 0 0 0-1.414L9.843.929A1 1 0 1 0 8.43 2.343L14.086 8l-5.657 5.657a1 1 0 1 0 1.414 1.414l6.364-6.364zM0 9h15.5V7H0v2z"
                   fill="#7F6956"></path>
               </svg>
-            </a></div><!-- link-list tablet-hide  -->
+            </a>
+          </div><!-- link-list tablet-hide  -->
         </div><!-- /repair-types-slider-wrap -->
         <div class="repair-types-tab">
           <div class="section-title repair-types-title">Какие виды<br><span>ремонта мы делаем:</span></div>
@@ -525,7 +529,7 @@
           <div class="nav-wrap nav-wrap-repair">
             <nav class="nav repair-types-nav">
               <div class="nav-list nav-list-repair">
-                <button type="button" class="button_o repair-types-nav__item repair-types-nav__item-1 active">
+                <button data-order="1" type="button" class="button_o repair-types-nav__item repair-types-nav__item-1 active">
                   <svg width="259" height="46" fill="none" viewBox="0 0 259 46" preserveAspectRatio="xMinYMin meet">
                     <path
                       d="M33.5 1h-10c-12.15 0-22 9.85-22 22s9.85 22 22 22h187M48.5 1h187c12.15 0 22 9.85 22 22s-9.85 22-22 22h-17.1"
@@ -533,7 +537,7 @@
                   </svg>
                   Частичный ремонт
                 </button><!-- /.repair-types__nav-item -->
-                <button type="button" class="button_o repair-types-nav__item repair-types-nav__item-2">
+                <button data-order="2" type="button" class="button_o repair-types-nav__item repair-types-nav__item-2">
                   <svg width="300" height="46" fill="none" viewBox="0 0 300 46" preserveAspectRatio="xMinYMin meet">
                     <path
                       d="M38.25 1H23C10.85 1 1 10.85 1 23s9.85 22 22 22h221.289M55.711 1H277c12.15 0 22 9.85 22 22s-9.85 22-22 22h-23.515"
@@ -541,7 +545,7 @@
                   </svg>
                   Косметический ремонт
                 </button><!-- /.repair-types__nav-item -->
-                <button type="button" class="button_o repair-types-nav__item repair-types-nav__item-3">
+                <button data-order="3" type="button" class="button_o repair-types-nav__item repair-types-nav__item-3">
                   <svg width="281" height="46" fill="none" viewBox="0 0 281 46" preserveAspectRatio="xMinYMin meet">
                     <path
                       d="M35.875 1H23C10.85 1 1 10.85 1 23s9.85 22 22 22h205.777M52.223 1H258c12.15 0 22 9.85 22 22s-9.85 22-22 22h-20.613"
@@ -549,7 +553,7 @@
                   </svg>
                   Капитальный ремонт
                 </button><!-- /.repair-types__nav-item -->
-                <button type="button" class="button_o repair-types-nav__item repair-types-nav__item-4">
+                <button data-order="4" type="button" class="button_o repair-types-nav__item repair-types-nav__item-4">
                   <svg width="268" height="46" fill="none" viewBox="0 0 268 46" preserveAspectRatio="xMinYMin meet">
                     <path
                       d="M34.25 1H23C10.85 1 1 10.85 1 23s9.85 22 22 22h195.164M49.836 1H245c12.15 0 22 9.85 22 22s-9.85 22-22 22h-18.627"
@@ -557,7 +561,7 @@
                   </svg>
                   Евроремонт ремонт
                 </button><!-- /.repair-types__nav-item -->
-                <button type="button" class="button_o repair-types-nav__item repair-types-nav__item-5">
+                <button data-order="5" type="button" class="button_o repair-types-nav__item repair-types-nav__item-5">
                   <svg width="324" height="46" fill="none" viewBox="0 0 324 46" preserveAspectRatio="xMinYMin meet">
                     <path
                       d="M41.25 1H23C10.85 1 1 10.85 1 23s9.85 22 22 22h240.883M60.117 1H301c12.15 0 22 9.85 22 22s-9.85 22-22 22h-27.18"
@@ -710,60 +714,70 @@
           <div class="portfolio-slider__slide fade-tab">
             <div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
                 src="./images/portfolio/img_1.jpg" alt="img_1">
-              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите,
+                  чтобы<br>увеличить</span>
               </div>
             </div>
             <div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
                 src="./images/portfolio/img_2.jpg" alt="img_2">
-              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите,
+                  чтобы<br>увеличить</span>
               </div>
             </div>
           </div><!-- /portfolio-slider__slide -->
           <div class="portfolio-slider__slide fade-tab">
             <div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
                 src="./images/portfolio/img_3.jpg" alt="img_3">
-              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите,
+                  чтобы<br>увеличить</span>
               </div>
             </div>
             <div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
                 src="./images/portfolio/img_4.jpg" alt="img_4">
-              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите,
+                  чтобы<br>увеличить</span>
               </div>
             </div>
           </div><!-- /portfolio-slider__slide -->
           <div class="portfolio-slider__slide fade-tab">
             <div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
                 src="./images/portfolio/img_5.jpg" alt="img_5">
-              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите,
+                  чтобы<br>увеличить</span>
               </div>
             </div>
             <div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
                 src="./images/portfolio/img_6.jpg" alt="img_6">
-              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите,
+                  чтобы<br>увеличить</span>
               </div>
             </div>
           </div><!-- /portfolio-slider__slide -->
           <div class="portfolio-slider__slide fade-tab">
             <div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
                 src="./images/portfolio/img_4.jpg" alt="img_1">
-              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите,
+                  чтобы<br>увеличить</span>
               </div>
             </div>
             <div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
                 src="./images/portfolio/img_3.jpg" alt="img_2">
-              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите,
+                  чтобы<br>увеличить</span>
               </div>
             </div>
           </div><!-- /portfolio-slider__slide -->
           <div class="portfolio-slider__slide fade-tab">
             <div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
                 src="./images/portfolio/img_2.jpg" alt="img_3">
-              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите,
+                  чтобы<br>увеличить</span>
               </div>
             </div>
             <div class="portfolio-slider__slide-frame"><img class="portfolio-slider__slide-frame-img"
                 src="./images/portfolio/img_1.jpg" alt="img_4">
-              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите,
+                  чтобы<br>увеличить</span>
               </div>
             </div>
           </div><!-- /portfolio-slider__slide -->
@@ -785,21 +799,24 @@
           <div class="transparency-item">
             <div class="transparency-item__img">
               <img src="./images/transparency/item_img.jpg" alt="document">
-              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите,
+                  чтобы<br>увеличить</span>
                 <div class="transparency-item__hint">
                   <strong>нажмите</strong> на документ, чтобы его посмотреть
                 </div>
               </div>
             </div>
             <div class="transparency-item__title">Договор</div>
-            <div class="transparency-item__descr">Заключение договора четко фиксирует финансовые и временные показатели
+            <div class="transparency-item__descr">Заключение договора четко фиксирует финансовые и временные
+              показатели
               выполнения работы, прав и обязанности сторон.
             </div>
           </div>
           <div class="transparency-item">
             <div class="transparency-item__img">
               <img src="./images/transparency/item_img.jpg" alt="document">
-              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите,
+                  чтобы<br>увеличить</span>
                 <div class="transparency-item__hint">
                   <strong>нажмите</strong> на документ, чтобы его посмотреть
                 </div>
@@ -814,7 +831,8 @@
           <div class="transparency-item">
             <div class="transparency-item__img">
               <img src="./images/transparency/item_img.jpg" alt="document">
-              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите, чтобы<br>увеличить</span>
+              <div class="item-hover"><img src="./images/zoom.svg" alt="zoom"> <span>Нажмите,
+                  чтобы<br>увеличить</span>
                 <div class="transparency-item__hint">
                   <strong>нажмите</strong> на документ, чтобы его посмотреть
                 </div>
@@ -911,7 +929,8 @@
           <div class="director-avatar__photo-wrap">
             <div class="director-avatar__photo"></div>
           </div>
-          <div class="director-avatar__descr mobile-hide tablet-hide">Мы с любовью создаем уют для Вашего дома. Получите
+          <div class="director-avatar__descr mobile-hide tablet-hide">Мы с любовью создаем уют для Вашего дома.
+            Получите
             от меня персональную консультацию!
           </div>
           <button class="button button_wide mobile-hide tablet-hide">Проконсультироваться</button>
@@ -973,7 +992,8 @@
           <div class="reviews-slider__slide-date">05.02.2020</div>
           <div class="reviews-slider__slide-title">Анютка Дюгурова</div>
           <div class="reviews-slider__slide-descr">Выражаю свою благодарность компании, проводившей полный ремонт *под
-            ключ* в моей однокомнатной квартире. Предварительная смета была расписана подробно, понятно по каждому виду
+            ключ* в моей однокомнатной квартире. Предварительная смета была расписана подробно, понятно по каждому
+            виду
             работ. Фактическая смета ... <a class="link-reviews-detail">Подробнее</a></div>
         </div>
         <div class="reviews-slider__slide">
@@ -990,7 +1010,8 @@
           <div class="reviews-slider__slide-date">05.12.2020</div>
           <div class="reviews-slider__slide-title">Анютка Дюгурова</div>
           <div class="reviews-slider__slide-descr">Выражаю свою благодарность компании, проводившей полный ремонт *под
-            ключ* в моей однокомнатной квартире. Предварительная смета была расписана подробно, понятно по каждому виду
+            ключ* в моей однокомнатной квартире. Предварительная смета была расписана подробно, понятно по каждому
+            виду
             работ. Фактическая смета ... <a class="link-reviews-detail">Подробнее</a></div>
         </div>
         <div class="reviews-slider__slide">
@@ -1007,7 +1028,8 @@
           <div class="reviews-slider__slide-date">05.02.2020</div>
           <div class="reviews-slider__slide-title">Анютка Дюгурова</div>
           <div class="reviews-slider__slide-descr">Выражаю свою благодарность компании, проводившей полный ремонт *под
-            ключ* в моей однокомнатной квартире. Предварительная смета была расписана подробно, понятно по каждому виду
+            ключ* в моей однокомнатной квартире. Предварительная смета была расписана подробно, понятно по каждому
+            виду
             работ. Фактическая смета ... <a class="link-reviews-detail">Подробнее</a></div>
         </div>
       </div><!-- /reviews-slider -->
@@ -1070,7 +1092,8 @@
               <p>Ремонт забирает не мало сил, нервов, времени и конечно же финансовых затрат. Удешевить и
                 сэкономить на ремонте можно!</p>
               <p>1. Создав дизайн проект, Вы получаете интересную идею, продуманный ремонт и не стандартный подход,
-                сэкономив приличную сумму денег до 15%, сохранив ваше время, поможет избежать типовых решений, переделок
+                сэкономив приличную сумму денег до 15%, сохранив ваше время, поможет избежать типовых решений,
+                переделок
                 и
                 срыва работ, сделает квартиру вашим идеальным и самым уютным местом для жизни. На основании проекта
                 составляется смета, планируются этапы работ и сроки их выполнения, заказ и закупка материалов,
@@ -1078,10 +1101,12 @@
               <p>2. Используя в работе компании комплекс современных технологий, таких как: - Машинная штукатурка
                 стандарта Q4. Позволяет сделать идеально ровные и гладкие стены, экономя время проведения работ до75%,
                 стоимость работ до 15%, расход материала до 30%. - Полусухая стяжка B.S. (British standards).
-                Использование специальных материалов и инструментов, даёт идеально ровную и гладкую поверхность пола без
+                Использование специальных материалов и инструментов, даёт идеально ровную и гладкую поверхность пола
+                без
                 трещин, гарантируя качественную установку паркета, ламината, плитки и т.д., экономя время проведения
                 работ
-                до 75%, затрат на подъём материала до 100%. - Монтаж сантехники по технологии «Система натяжное кольцо»
+                до 75%, затрат на подъём материала до 100%. - Монтаж сантехники по технологии «Система натяжное
+                кольцо»
                 гарантирует высокое качество соединения и долговечность. - Пайка доз медью в электромонтажных работах
                 даёт
                 надежный контакт.</p>
@@ -1097,7 +1122,8 @@
               <p>Ремонт забирает не мало сил, нервов, времени и конечно же финансовых затрат. Удешевить и
                 сэкономить на ремонте можно!</p>
               <p>1. Создав дизайн проект, Вы получаете интересную идею, продуманный ремонт и не стандартный подход,
-                сэкономив приличную сумму денег до 15%, сохранив ваше время, поможет избежать типовых решений, переделок
+                сэкономив приличную сумму денег до 15%, сохранив ваше время, поможет избежать типовых решений,
+                переделок
                 и
                 срыва работ, сделает квартиру вашим идеальным и самым уютным местом для жизни. На основании проекта
                 составляется смета, планируются этапы работ и сроки их выполнения, заказ и закупка материалов,
@@ -1105,10 +1131,12 @@
               <p>2. Используя в работе компании комплекс современных технологий, таких как: - Машинная штукатурка
                 стандарта Q4. Позволяет сделать идеально ровные и гладкие стены, экономя время проведения работ до75%,
                 стоимость работ до 15%, расход материала до 30%. - Полусухая стяжка B.S. (British standards).
-                Использование специальных материалов и инструментов, даёт идеально ровную и гладкую поверхность пола без
+                Использование специальных материалов и инструментов, даёт идеально ровную и гладкую поверхность пола
+                без
                 трещин, гарантируя качественную установку паркета, ламината, плитки и т.д., экономя время проведения
                 работ
-                до 75%, затрат на подъём материала до 100%. - Монтаж сантехники по технологии «Система натяжное кольцо»
+                до 75%, затрат на подъём материала до 100%. - Монтаж сантехники по технологии «Система натяжное
+                кольцо»
                 гарантирует высокое качество соединения и долговечность. - Пайка доз медью в электромонтажных работах
                 даёт
                 надежный контакт.</p>
@@ -1124,7 +1152,8 @@
               <p>Ремонт забирает не мало сил, нервов, времени и конечно же финансовых затрат. Удешевить и
                 сэкономить на ремонте можно!</p>
               <p>1. Создав дизайн проект, Вы получаете интересную идею, продуманный ремонт и не стандартный подход,
-                сэкономив приличную сумму денег до 15%, сохранив ваше время, поможет избежать типовых решений, переделок
+                сэкономив приличную сумму денег до 15%, сохранив ваше время, поможет избежать типовых решений,
+                переделок
                 и
                 срыва работ, сделает квартиру вашим идеальным и самым уютным местом для жизни. На основании проекта
                 составляется смета, планируются этапы работ и сроки их выполнения, заказ и закупка материалов,
@@ -1132,10 +1161,12 @@
               <p>2. Используя в работе компании комплекс современных технологий, таких как: - Машинная штукатурка
                 стандарта Q4. Позволяет сделать идеально ровные и гладкие стены, экономя время проведения работ до75%,
                 стоимость работ до 15%, расход материала до 30%. - Полусухая стяжка B.S. (British standards).
-                Использование специальных материалов и инструментов, даёт идеально ровную и гладкую поверхность пола без
+                Использование специальных материалов и инструментов, даёт идеально ровную и гладкую поверхность пола
+                без
                 трещин, гарантируя качественную установку паркета, ламината, плитки и т.д., экономя время проведения
                 работ
-                до 75%, затрат на подъём материала до 100%. - Монтаж сантехники по технологии «Система натяжное кольцо»
+                до 75%, затрат на подъём материала до 100%. - Монтаж сантехники по технологии «Система натяжное
+                кольцо»
                 гарантирует высокое качество соединения и долговечность. - Пайка доз медью в электромонтажных работах
                 даёт
                 надежный контакт.</p>
@@ -1151,7 +1182,8 @@
               <p>Ремонт забирает не мало сил, нервов, времени и конечно же финансовых затрат. Удешевить и
                 сэкономить на ремонте можно!</p>
               <p>1. Создав дизайн проект, Вы получаете интересную идею, продуманный ремонт и не стандартный подход,
-                сэкономив приличную сумму денег до 15%, сохранив ваше время, поможет избежать типовых решений, переделок
+                сэкономив приличную сумму денег до 15%, сохранив ваше время, поможет избежать типовых решений,
+                переделок
                 и
                 срыва работ, сделает квартиру вашим идеальным и самым уютным местом для жизни. На основании проекта
                 составляется смета, планируются этапы работ и сроки их выполнения, заказ и закупка материалов,
@@ -1159,10 +1191,12 @@
               <p>2. Используя в работе компании комплекс современных технологий, таких как: - Машинная штукатурка
                 стандарта Q4. Позволяет сделать идеально ровные и гладкие стены, экономя время проведения работ до75%,
                 стоимость работ до 15%, расход материала до 30%. - Полусухая стяжка B.S. (British standards).
-                Использование специальных материалов и инструментов, даёт идеально ровную и гладкую поверхность пола без
+                Использование специальных материалов и инструментов, даёт идеально ровную и гладкую поверхность пола
+                без
                 трещин, гарантируя качественную установку паркета, ламината, плитки и т.д., экономя время проведения
                 работ
-                до 75%, затрат на подъём материала до 100%. - Монтаж сантехники по технологии «Система натяжное кольцо»
+                до 75%, затрат на подъём материала до 100%. - Монтаж сантехники по технологии «Система натяжное
+                кольцо»
                 гарантирует высокое качество соединения и долговечность. - Пайка доз медью в электромонтажных работах
                 даёт
                 надежный контакт.</p>
@@ -1178,7 +1212,8 @@
               <p>Ремонт забирает не мало сил, нервов, времени и конечно же финансовых затрат. Удешевить и
                 сэкономить на ремонте можно!</p>
               <p>1. Создав дизайн проект, Вы получаете интересную идею, продуманный ремонт и не стандартный подход,
-                сэкономив приличную сумму денег до 15%, сохранив ваше время, поможет избежать типовых решений, переделок
+                сэкономив приличную сумму денег до 15%, сохранив ваше время, поможет избежать типовых решений,
+                переделок
                 и
                 срыва работ, сделает квартиру вашим идеальным и самым уютным местом для жизни. На основании проекта
                 составляется смета, планируются этапы работ и сроки их выполнения, заказ и закупка материалов,
@@ -1186,10 +1221,12 @@
               <p>2. Используя в работе компании комплекс современных технологий, таких как: - Машинная штукатурка
                 стандарта Q4. Позволяет сделать идеально ровные и гладкие стены, экономя время проведения работ до75%,
                 стоимость работ до 15%, расход материала до 30%. - Полусухая стяжка B.S. (British standards).
-                Использование специальных материалов и инструментов, даёт идеально ровную и гладкую поверхность пола без
+                Использование специальных материалов и инструментов, даёт идеально ровную и гладкую поверхность пола
+                без
                 трещин, гарантируя качественную установку паркета, ламината, плитки и т.д., экономя время проведения
                 работ
-                до 75%, затрат на подъём материала до 100%. - Монтаж сантехники по технологии «Система натяжное кольцо»
+                до 75%, затрат на подъём материала до 100%. - Монтаж сантехники по технологии «Система натяжное
+                кольцо»
                 гарантирует высокое качество соединения и долговечность. - Пайка доз медью в электромонтажных работах
                 даёт
                 надежный контакт.</p>
@@ -1205,7 +1242,8 @@
               <p>Ремонт забирает не мало сил, нервов, времени и конечно же финансовых затрат. Удешевить и
                 сэкономить на ремонте можно!</p>
               <p>1. Создав дизайн проект, Вы получаете интересную идею, продуманный ремонт и не стандартный подход,
-                сэкономив приличную сумму денег до 15%, сохранив ваше время, поможет избежать типовых решений, переделок
+                сэкономив приличную сумму денег до 15%, сохранив ваше время, поможет избежать типовых решений,
+                переделок
                 и
                 срыва работ, сделает квартиру вашим идеальным и самым уютным местом для жизни. На основании проекта
                 составляется смета, планируются этапы работ и сроки их выполнения, заказ и закупка материалов,
@@ -1213,10 +1251,12 @@
               <p>2. Используя в работе компании комплекс современных технологий, таких как: - Машинная штукатурка
                 стандарта Q4. Позволяет сделать идеально ровные и гладкие стены, экономя время проведения работ до75%,
                 стоимость работ до 15%, расход материала до 30%. - Полусухая стяжка B.S. (British standards).
-                Использование специальных материалов и инструментов, даёт идеально ровную и гладкую поверхность пола без
+                Использование специальных материалов и инструментов, даёт идеально ровную и гладкую поверхность пола
+                без
                 трещин, гарантируя качественную установку паркета, ламината, плитки и т.д., экономя время проведения
                 работ
-                до 75%, затрат на подъём материала до 100%. - Монтаж сантехники по технологии «Система натяжное кольцо»
+                до 75%, затрат на подъём материала до 100%. - Монтаж сантехники по технологии «Система натяжное
+                кольцо»
                 гарантирует высокое качество соединения и долговечность. - Пайка доз медью в электромонтажных работах
                 даёт
                 надежный контакт.</p>
@@ -1232,7 +1272,8 @@
               <p>Ремонт забирает не мало сил, нервов, времени и конечно же финансовых затрат. Удешевить и
                 сэкономить на ремонте можно!</p>
               <p>1. Создав дизайн проект, Вы получаете интересную идею, продуманный ремонт и не стандартный подход,
-                сэкономив приличную сумму денег до 15%, сохранив ваше время, поможет избежать типовых решений, переделок
+                сэкономив приличную сумму денег до 15%, сохранив ваше время, поможет избежать типовых решений,
+                переделок
                 и
                 срыва работ, сделает квартиру вашим идеальным и самым уютным местом для жизни. На основании проекта
                 составляется смета, планируются этапы работ и сроки их выполнения, заказ и закупка материалов,
@@ -1240,10 +1281,12 @@
               <p>2. Используя в работе компании комплекс современных технологий, таких как: - Машинная штукатурка
                 стандарта Q4. Позволяет сделать идеально ровные и гладкие стены, экономя время проведения работ до75%,
                 стоимость работ до 15%, расход материала до 30%. - Полусухая стяжка B.S. (British standards).
-                Использование специальных материалов и инструментов, даёт идеально ровную и гладкую поверхность пола без
+                Использование специальных материалов и инструментов, даёт идеально ровную и гладкую поверхность пола
+                без
                 трещин, гарантируя качественную установку паркета, ламината, плитки и т.д., экономя время проведения
                 работ
-                до 75%, затрат на подъём материала до 100%. - Монтаж сантехники по технологии «Система натяжное кольцо»
+                до 75%, затрат на подъём материала до 100%. - Монтаж сантехники по технологии «Система натяжное
+                кольцо»
                 гарантирует высокое качество соединения и долговечность. - Пайка доз медью в электромонтажных работах
                 даёт
                 надежный контакт.</p>
@@ -1273,8 +1316,7 @@
         <button class="button button-feedback-block">Перезвоните мне</button>
         <div class="checkbox checkbox-feedback-block">
           <input class="checkbox__input" type="checkbox" id="checkbox5">
-          <label class="checkbox__label"
-            for="checkbox5"></label>
+          <label class="checkbox__label" for="checkbox5"></label>
           <div class="checkbox__descr">Нажимая на кнопку, Вы даете согласие на
             <span class="link-privacy">обработку своих персональных данных</span>
           </div>
@@ -2338,14 +2380,18 @@
                     определяемому физическому лицу (также называемому субъектом персональных данных).
                   </li>
                   <li>«Обработка персональных данных» — любая операция (действие) либо совокупность таковых, которые
-                    Администрация производит с персональными данными. Их могут собирать, записывать, систематизировать,
-                    накапливать, хранить, уточнять (при необходимости обновлять или изменять), извлекать, использовать,
+                    Администрация производит с персональными данными. Их могут собирать, записывать,
+                    систематизировать,
+                    накапливать, хранить, уточнять (при необходимости обновлять или изменять), извлекать,
+                    использовать,
                     передавать (распространять, предоставлять, открывать к ним доступ), обезличивать, блокировать,
                     удалять
                     и даже уничтожать. Данные операции (действия) могут выполняться как автоматически, так и вручную.
                   </li>
-                  <li>«Конфиденциальность персональных данных» — обязательное требование, предъявляемое к Оператору или
-                    иному работающему с данными Пользователя должностному лицу, хранить полученные сведения в тайне, не
+                  <li>«Конфиденциальность персональных данных» — обязательное требование, предъявляемое к Оператору
+                    или
+                    иному работающему с данными Пользователя должностному лицу, хранить полученные сведения в тайне,
+                    не
                     посвящая в них посторонних, если предоставивший персональные данные Пользователь не изъявил своё
                     согласие, а также отсутствует законное основание для разглашения.
                   </li>

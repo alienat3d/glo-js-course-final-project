@@ -6,8 +6,9 @@ import { modifyPhoneInputsFunc } from "./modules/modify-phone-inputs";
 import { sendFormFunc } from "./modules/send-form";
 import { privacyPopupFunc } from "./modules/privacy-popup";
 import { formulaTooltipsFunc } from "./modules/formula-tooltips";
-import { sliderFunc } from "./modules/formula-slider";
+import { formulaSliderFunc } from "./modules/formula-slider";
 import { repairTypesSliderFunc } from "./modules/repair-types-slider";
+import { tabsFunc } from "./modules/tabs";
 
 headerPhonesAccordionFunc();
 headerMenuRolloutFunc();
@@ -18,6 +19,7 @@ sendFormFunc();
 privacyPopupFunc();
 formulaTooltipsFunc();
 formulaSliderFunc('.formula-slider-wrap', '.formula-item');
-repairTypesSliderFunc('.repair-types-slider', '.types-repair1');
+tabsFunc('.nav-list-repair', '.repair-types-slider');
+repairTypesSliderFunc('.repair-types-slider-wrap', '.types-repair1 .repair-types-slider__slide');
 
 // window.addEventListener("DOMContentLoaded", () => console.warn('Website is loaded.'));

@@ -1700,6 +1700,7 @@ template,
 }
 
 .repair-types-tab {
+  user-select: none;
   width: 39.5%;
 }
 
