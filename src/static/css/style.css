@@ -1114,6 +1114,7 @@ template,
 }
 
 .formula-slider {
+  user-select: none;
   margin-top: -50px;
   /* margin-top: 102px; */
   display: flex;
@@ -7260,7 +7261,8 @@ div.wave-block:nth-child(17):after {
 
 @media (max-width: 1024px) {
   .nav-list-repair {
-    min-width: 1200px;
+    justify-content: center;
+    /* min-width: 1200px; */
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

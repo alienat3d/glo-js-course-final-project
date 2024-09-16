@@ -19,5 +19,5 @@ Improvements:
 
   [Repair Types Section]:
   - Make showing animation more smooth & slow;
-
-
+  - Fix memory lack through adding excessive event listeners;
+  - (Mobile screens): Enlarge the repair types buttons (.nav-list-repair)

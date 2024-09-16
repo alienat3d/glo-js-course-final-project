@@ -14,52 +14,63 @@ export const repairTypesSliderFunc = (containerClass, slideClass) => {
   let currentSlide = 0;
   let interval;
 
-	const prevSlide = (elems, idx, activeClass) => {
+  const prevSlide = (elems, idx, activeClass) => {
     modalDisappearAnimation(elems[idx]);
     elems[idx].classList.add(activeClass);
   };
-	const nextSlide = (elems, idx, activeClass) => {
+  const nextSlide = (elems, idx, activeClass) => {
     elems[idx].classList.remove(activeClass);
     modalAppearAnimation(elems[idx]);
   };
 
-	const autoSlider = () => {
-		prevSlide(slides, currentSlide, 'hide');
-		currentSlide++;
-		if (currentSlide >= slides.length) currentSlide = 0;
-		nextSlide(slides, currentSlide, 'hide');
-	}
-
-	TIME_INTERVAL = TIME_INTERVAL * 1000;
-
-	const startSlider = (timer) => {
-		interval = setInterval(autoSlider, timer);
-	}
-	const stopSlider = () => {
-		clearInterval(interval);
-	}
-
-  sliderBlock.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    if (!evt.target.closest('.slider-arrow')) return;
+  const autoSlider = () => {
     prevSlide(slides, currentSlide, 'hide');
-    if (evt.target.closest('.slider-arrow_left')) {
-      currentSlide--;
-    } else if (evt.target.closest('.slider-arrow_right')) {
-      currentSlide++;
-    }
+    currentSlide++;
     if (currentSlide >= slides.length) currentSlide = 0;
-    if (currentSlide < 0) currentSlide = slides.length - 1;
-
     nextSlide(slides, currentSlide, 'hide');
-  })
+  }
 
-	sliderBlock.addEventListener('mouseenter', (evt) => {
-		if (evt.target.matches('.slider-arrow')) stopSlider(TIME_INTERVAL);
-	}, true)
-	sliderBlock.addEventListener('mouseleave', (evt) => {
-		if (evt.target.matches('.slider-arrow')) startSlider(TIME_INTERVAL);
-	}, true)
+  TIME_INTERVAL = TIME_INTERVAL * 1000;
 
-	startSlider(TIME_INTERVAL);
+  const startSlider = (timer) => {
+    interval = setInterval(autoSlider, timer);
+  }
+  const stopSlider = () => {
+    clearInterval(interval);
+  }
+
+  // Чтобы слушатели событий бесконечно не дублировались
+  function setupEventListener(selector, event, action) {
+    document.querySelectorAll(selector).forEach(el => {
+      el.removeEventListener(event, action);
+      el.addEventListener(event, action);
+    });
+  }
+
+  const sliderInit = () => {
+    sliderBlock.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      if (!evt.target.closest('.slider-arrow')) return;
+      prevSlide(slides, currentSlide, 'hide');
+      if (evt.target.closest('.slider-arrow_left')) {
+        currentSlide--;
+      } else if (evt.target.closest('.slider-arrow_right')) {
+        currentSlide++;
+      }
+      if (currentSlide >= slides.length) currentSlide = 0;
+      if (currentSlide < 0) currentSlide = slides.length - 1;
+
+      nextSlide(slides, currentSlide, 'hide');
+    })
+  }
+
+  sliderBlock.addEventListener('mouseenter', (evt) => {
+    if (evt.target.matches('.slider-arrow')) stopSlider(TIME_INTERVAL);
+  }, true)
+  sliderBlock.addEventListener('mouseleave', (evt) => {
+    if (evt.target.matches('.slider-arrow')) startSlider(TIME_INTERVAL);
+  }, true)
+
+  setupEventListener(containerClass, 'click', sliderInit);
+  startSlider(TIME_INTERVAL);
 }

@@ -9,6 +9,7 @@ import { formulaTooltipsFunc } from "./modules/formula-tooltips";
 import { formulaSliderFunc } from "./modules/formula-slider";
 import { repairTypesSliderFunc } from "./modules/repair-types-slider";
 import { tabsFunc } from "./modules/tabs";
+import { repairTypesNavSliderFunc } from "./modules/repair-types-nav-slider";
 
 headerPhonesAccordionFunc();
 headerMenuRolloutFunc();
@@ -21,5 +22,6 @@ formulaTooltipsFunc();
 formulaSliderFunc('.formula-slider-wrap', '.formula-item');
 tabsFunc('.nav-list-repair', '.repair-types-slider');
 repairTypesSliderFunc('.repair-types-slider-wrap', '.types-repair1 .repair-types-slider__slide');
+repairTypesNavSliderFunc('.nav-wrap-repair-types', '.repair-types-slider');
 
 // window.addEventListener("DOMContentLoaded", () => console.warn('Website is loaded.'));
