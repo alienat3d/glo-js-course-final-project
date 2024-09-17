@@ -8,7 +8,7 @@ export const repairTypesSliderFunc = (containerClass, slideClass) => {
 	if (sliderBlock === null) return;
 
 	let TIME_INTERVAL = 3;
-
+  
 	const slides = sliderBlock.querySelectorAll(slideClass);
 	const currentSlideCountElem = sliderBlock.querySelector('.slider-counter-content__current');
 	const totalSlidesCountElem = sliderBlock.querySelector('.slider-counter-content__total');
@@ -52,7 +52,7 @@ export const repairTypesSliderFunc = (containerClass, slideClass) => {
 	//   });
 	// }
 
-	const activateSlider = () => {
+	const activateSlider = (evt) => {
 		if (!evt.target.closest('.slider-arrow')) return;
 		prevSlide(slides, currentSlide, 'hide');
 		if (evt.target.closest('.slider-arrow_left')) {
@@ -68,12 +68,12 @@ export const repairTypesSliderFunc = (containerClass, slideClass) => {
 	currentSlideCountElem.textContent = currentSlide;
 	totalSlidesCountElem.textContent = slides.length;
 
-	sliderBlock.addEventListener('click', activateSlider);
+	sliderBlock.addEventListener('click', (evt) => activateSlider(evt));
 
 	sliderBlock.addEventListener('mouseenter', (evt) => stopSlider(evt, interval, autoSlider, TIME_INTERVAL));
 	sliderBlock.addEventListener('mouseleave', (evt) => startSlider(evt, TIME_INTERVAL));
 
 	// setupEventListener(containerClass, 'click', sliderInit);
-	sliderInit();
+	// sliderInit();
 	startSlider(TIME_INTERVAL);
 }

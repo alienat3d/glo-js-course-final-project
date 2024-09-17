@@ -3509,7 +3509,7 @@ div.wave-block:nth-child(17):after {
 
 .stock__footnote-descr {
   padding-left: 12px;
-  font-weight: 200;
+  /* font-weight: 200; */
   line-height: 16px;
   font-size: 13.2632px;
 }
@@ -7963,7 +7963,7 @@ div.wave-block:nth-child(17):after {
 
 .checkbox__descr {
   padding-left: 10px;
-  font-weight: 400;
+  /* font-weight: 200; */
   line-height: 16px;
   font-size: 13px;
   color: #322823;
