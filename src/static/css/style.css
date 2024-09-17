@@ -6777,6 +6777,7 @@ div.wave-block:nth-child(17):after {
 
 .link-list-repair {
   padding: 45px 25px 7px;
+  user-select: none;
 }
 
 .link-list-repair div {
@@ -7538,6 +7539,7 @@ div.wave-block:nth-child(17):after {
 .slider-counter-content__total {
   text-align: right;
   font-weight: 200;
+  /* font-size: 20px; */
 }
 
 .slider-counter_dark {
