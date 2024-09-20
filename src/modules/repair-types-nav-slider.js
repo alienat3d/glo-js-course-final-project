@@ -1,19 +1,19 @@
-import { measureWindowWidth, modalAppearAnimation, modalDisappearAnimation } from "./helpers";
-import { repairTypesSliderFunc } from "./repair-types-slider";
+// import { measureWindowWidth, modalAppearAnimation, modalDisappearAnimation } from "./helpers";
+// import { repairTypesSliderFunc } from "./repair-types-slider";
 
-export const repairTypesNavSliderFunc = (containerClass, tabsContentClass) => {
-  if (!containerClass) return;
+export const repairTypesNavSliderFunc = () => {
+  // if (!containerClass) return;
 
-  const windowWidth = measureWindowWidth();
-  if (windowWidth > 1007) return;
+  // const windowWidth = measureWindowWidth();
+  // if (windowWidth > 1007) return;
 
-  const sliderBlock = document.querySelector(containerClass);
-  if (sliderBlock === null) return;
+  // const sliderBlock = document.querySelector('.nav-wrap-repair-types');
+  // if (sliderBlock === null) return;
 
-  const sliderButtons = sliderBlock.querySelectorAll('button');
+  // const sliderButtons = sliderBlock.querySelectorAll('button');
 
-  const tabsContentParent = document.querySelector(tabsContentClass);
-  const tabsContentElements = tabsContentParent.querySelectorAll(`${tabsContentClass} > div`);
+  // const tabsContentParent = document.querySelector('.repair-types-slider');
+  // const tabsContentElements = tabsContentParent.querySelectorAll('.repair-types-slider > div');
 
   let currentSlide = 0;
 

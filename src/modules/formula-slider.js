@@ -1,10 +1,10 @@
-export const formulaSliderFunc = (containerClass, slideClass) => {
-  if (!containerClass || !slideClass) return;
+export const formulaSliderFunc = () => {
+  // if (!containerClass || !slideClass) return;
 
-  const sliderBlock = document.querySelector(containerClass);
-  if (sliderBlock === null) return;
+  const sliderBlock = document.querySelector('.formula-slider-wrap');
+  // if (sliderBlock === null) return;
 
-  const slides = sliderBlock.querySelectorAll(slideClass);
+  const slides = sliderBlock.querySelectorAll('.formula-item');
   const sliderWrapper = sliderBlock.querySelector('.formula-slider');
 
   let currentSlide = 0;
@@ -34,7 +34,7 @@ export const formulaSliderFunc = (containerClass, slideClass) => {
       visibleSlides.splice(1, 1, visibleSlides.splice(2, 1, visibleSlides[1])[0]);
       visibleSlides.splice(0, 1, visibleSlides.splice(2, 1, visibleSlides[0])[0]);
       visibleSlides.forEach(slide => sliderContainer.insertAdjacentElement('beforeend', slide));
-    } else if (currentIdx > 0 || currentIdx < array.length - 2) {
+    } else {
       slides.forEach((slide, idx, array) => {
         slide.classList.remove('active-item');
         if (idx === currentIdx || idx === currentIdx - 1 || idx === currentIdx + 1) {

@@ -8,8 +8,10 @@ import { privacyPopupFunc } from "./modules/privacy-popup";
 import { formulaTooltipsFunc } from "./modules/formula-tooltips";
 import { formulaSliderFunc } from "./modules/formula-slider";
 import { repairTypesSliderFunc } from "./modules/repair-types-slider";
-import { tabsFunc } from "./modules/tabs";
-import { repairTypesNavSliderFunc } from "./modules/repair-types-nav-slider";
+// import { repairTypesNavSliderFunc } from "./modules/repair-types-nav-slider";
+// import { testFunc } from "./modules/test";
+// import { portfolioSliderFunc } from "./modules/portfolio-slider";
+
 
 headerPhonesAccordionFunc();
 headerMenuRolloutFunc();
@@ -19,9 +21,9 @@ modifyPhoneInputsFunc();
 sendFormFunc();
 privacyPopupFunc();
 formulaTooltipsFunc();
-formulaSliderFunc('.formula-slider-wrap', '.formula-item');
-tabsFunc('.nav-list-repair', '.repair-types-slider');
-repairTypesSliderFunc('.repair-types-slider-wrap', '.types-repair1 .repair-types-slider__slide');
-repairTypesNavSliderFunc('.nav-wrap-repair-types', '.repair-types-slider');
+formulaSliderFunc();
+repairTypesSliderFunc();
+// portfolioSliderFunc('.portfolio-slider-wrap',);
+// testFunc();
 
-// window.addEventListener("DOMContentLoaded", () => console.warn('Website is loaded.'));
+window.addEventListener("DOMContentLoaded", () => console.info('Website is loaded.'));

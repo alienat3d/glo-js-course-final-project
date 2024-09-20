@@ -19,5 +19,6 @@ Improvements:
 
   [Repair Types Section]:
   - Make showing animation more smooth & slow;
-  - Fix memory lack through adding excessive event listeners;
+  - Fix memory lack through adding excessive event listeners; @done
+  - Check if auto-slider works fine;
   - (Mobile screens): Enlarge the repair types buttons (.nav-list-repair)

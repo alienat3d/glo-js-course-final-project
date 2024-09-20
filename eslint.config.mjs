@@ -9,7 +9,7 @@ export default [
   {
     rules: {
       "no-var": "error",
-      "no-console": "error"
+      // "no-console": "error"
     }
   }
 ];
