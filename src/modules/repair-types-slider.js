@@ -150,23 +150,14 @@ export const repairTypesSliderFunc = () => {
       nextNavSlide(tabsContentElements, currentNavSlide, 'hide');
 
       tabsContentElements.forEach((contentElem, idx) => {
-        if (idx === currentNavSlide) {
+        if (idx !== currentNavSlide) return;
           stopSlider(interval);
           slides = sliderSlides[currentNavSlide].querySelectorAll('div');
-          // contentElem.classList.remove('hide');
-          // modalAppearAnimation(contentElem);
           currentSlide = 1;
           currentSlideCountElem.textContent = currentSlide;
           totalSlidesCountElem.textContent = slides.length;
           startSlider(TIME_INTERVAL);
-        } else {
-          // modalDisappearAnimation(contentElem);
-          // contentElem.classList.add('hide');
-        }
       });
-      // repairTypesSliderFunc(
-      //   '.repair-types-slider-wrap', `.types-repair${currentSlide + 1} .repair-types-slider__slide`
-      // )
     })
   }
 }
