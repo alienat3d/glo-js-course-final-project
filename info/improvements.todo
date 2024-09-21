@@ -1,4 +1,9 @@
 Improvements:
+  [Overall]:
+  - Check all resolutions for bugs;
+  - Check HTML structure + "alt" attributes for images (esp. Portfolio section needs a review);
+  - Add license information for photos from stocks;
+
   [Header Nav Menu]:
   - CSS replace 'translate3d's with 'translateX';
   - Increase the font size for narrow screens;
@@ -21,4 +26,5 @@ Improvements:
   - Make showing animation more smooth & slow;
   - Fix memory lack through adding excessive event listeners; @done
   - Check if auto-slider works fine;
-  - (Mobile screens): Enlarge the repair types buttons (.nav-list-repair)
+  - (Mobile screens): Enlarge the repair types buttons (.nav-list-repair);
+  - Replace photos with watermarks by better one;

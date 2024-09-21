@@ -8262,9 +8262,9 @@ div.wave-block:nth-child(17):after {
   }
 }
 
-#portfolio-arrow_left {
+/* #portfolio-arrow_left {
   display: none;
-}
+} */
 
 @media (max-width: 900px) {
   #portfolio-arrow_left {

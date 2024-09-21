@@ -8,9 +8,8 @@ import { privacyPopupFunc } from "./modules/privacy-popup";
 import { formulaTooltipsFunc } from "./modules/formula-tooltips";
 import { formulaSliderFunc } from "./modules/formula-slider";
 import { repairTypesSliderFunc } from "./modules/repair-types-slider";
-// import { repairTypesNavSliderFunc } from "./modules/repair-types-nav-slider";
+import { portfolioSliderFunc } from "./modules/portfolio-slider";
 // import { testFunc } from "./modules/test";
-// import { portfolioSliderFunc } from "./modules/portfolio-slider";
 
 
 headerPhonesAccordionFunc();
@@ -23,7 +22,7 @@ privacyPopupFunc();
 formulaTooltipsFunc();
 formulaSliderFunc();
 repairTypesSliderFunc();
-// portfolioSliderFunc('.portfolio-slider-wrap',);
+portfolioSliderFunc();
 // testFunc();
 
 window.addEventListener("DOMContentLoaded", () => console.info('Website is loaded.'));

@@ -1,9 +1,5 @@
 export const formulaSliderFunc = () => {
-  // if (!containerClass || !slideClass) return;
-
   const sliderBlock = document.querySelector('.formula-slider-wrap');
-  // if (sliderBlock === null) return;
-
   const slides = sliderBlock.querySelectorAll('.formula-item');
   const sliderWrapper = sliderBlock.querySelector('.formula-slider');
 
