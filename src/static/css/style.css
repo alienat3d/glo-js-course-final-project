@@ -2233,6 +2233,7 @@ div.wave-block:nth-child(17):after {
 }
 
 .portfolio {
+  user-select: none;
   position: relative;
   padding-top: 83px;
   z-index: 2;
@@ -5976,6 +5977,10 @@ div.wave-block:nth-child(17):after {
     width: 15px;
     height: 12px;
   }
+}
+
+.popup-portfolio {
+  user-select: none;
 }
 
 .popup-portfolio-slider {
