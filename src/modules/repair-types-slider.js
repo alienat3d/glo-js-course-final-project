@@ -110,8 +110,6 @@ export const repairTypesSliderFunc = () => {
 
   // Navigation Tabs Slider for the Narrow Screens
   if (windowWidth < 1007) {
-    console.log('narrow');
-
     let currentNavSlide = 0;
 
     const prevNavSlide = (elems, idx, hideClass, activeClass) => {

@@ -9236,7 +9236,8 @@ strong {
 }
 
 .popup-portfolio-opened,
-.popup-transparency-opened {
+.popup-transparency-opened,
+.popup-consultation-opened {
   visibility: visible;
 }
 

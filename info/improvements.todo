@@ -3,6 +3,7 @@ Improvements:
   - Check all resolutions for bugs;
   - Check HTML structure + "alt" attributes for images (esp. Portfolio section needs a review);
   - Add license information for photos from stocks;
+  - Refactor modules: make an universal module for sliders & popups [dry];
 
   [Header Nav Menu]:
   - CSS replace 'translate3d's with 'translateX';

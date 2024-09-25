@@ -12,6 +12,7 @@ import { portfolioSliderFunc } from "./modules/portfolio-slider";
 import { portfolioPopupSliderFunc } from "./modules/portfolio-popup-slider";
 import { contractSliderFunc } from "./modules/contract-slider";
 import { contractPopupSliderFunc } from "./modules/contract-popup-slider";
+import { consultationPopupFunc } from "./modules/consultation-popup";
 // import { testFunc } from "./modules/test";
 
 
@@ -29,6 +30,7 @@ portfolioSliderFunc();
 portfolioPopupSliderFunc();
 contractSliderFunc();
 contractPopupSliderFunc();
+consultationPopupFunc();
 // testFunc();
 
 window.addEventListener("DOMContentLoaded", () => console.info('Website is loaded.'));
