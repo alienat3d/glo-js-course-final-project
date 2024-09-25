@@ -11,6 +11,7 @@ import { repairTypesSliderFunc } from "./modules/repair-types-slider";
 import { portfolioSliderFunc } from "./modules/portfolio-slider";
 import { portfolioPopupSliderFunc } from "./modules/portfolio-popup-slider";
 import { contractSliderFunc } from "./modules/contract-slider";
+import { contractPopupSliderFunc } from "./modules/contract-popup-slider";
 // import { testFunc } from "./modules/test";
 
 
@@ -27,6 +28,7 @@ repairTypesSliderFunc();
 portfolioSliderFunc();
 portfolioPopupSliderFunc();
 contractSliderFunc();
+contractPopupSliderFunc();
 // testFunc();
 
 window.addEventListener("DOMContentLoaded", () => console.info('Website is loaded.'));

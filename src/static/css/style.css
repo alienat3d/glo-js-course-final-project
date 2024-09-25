@@ -4967,6 +4967,7 @@ div.wave-block:nth-child(17):after {
 }
 
 .popup-dialog-transparency {
+  user-select: none;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9234,7 +9235,8 @@ strong {
   bottom: -39px
 }
 
-.popup-portfolio-opened {
+.popup-portfolio-opened,
+.popup-transparency-opened {
   visibility: visible;
 }
 
