@@ -2477,6 +2477,7 @@ div.wave-block:nth-child(17):after {
 }
 
 .transparency-slider-wrap {
+  user-select: none;
   margin-top: 150px;
 }
 
