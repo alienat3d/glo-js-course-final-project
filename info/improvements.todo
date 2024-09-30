@@ -29,3 +29,7 @@ Improvements:
   - Check if auto-slider works fine;
   - (Mobile screens): Enlarge the repair types buttons (.nav-list-repair);
   - Replace photos with watermarks by better one;
+
+  [Repair Types Section]:
+  - By clicking on the links "подробнее" more text shall have been shown;
+  - Make smooth transition at height and position of the arrows after remove class for collapsing review text;

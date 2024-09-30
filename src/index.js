@@ -13,6 +13,7 @@ import { portfolioPopupSliderFunc } from "./modules/portfolio-popup-slider";
 import { contractSliderFunc } from "./modules/contract-slider";
 import { contractPopupSliderFunc } from "./modules/contract-popup-slider";
 import { consultationPopupFunc } from "./modules/consultation-popup";
+import { reviewsSliderFunc } from "./modules/reviews-slider";
 // import { testFunc } from "./modules/test";
 
 
@@ -31,6 +32,7 @@ portfolioPopupSliderFunc();
 contractSliderFunc();
 contractPopupSliderFunc();
 consultationPopupFunc();
+reviewsSliderFunc();
 // testFunc();
 
 window.addEventListener("DOMContentLoaded", () => console.info('Website is loaded.'));
