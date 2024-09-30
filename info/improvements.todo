@@ -33,3 +33,7 @@ Improvements:
   [Repair Types Section]:
   - By clicking on the links "подробнее" more text shall have been shown;
   - Make smooth transition at height and position of the arrows after remove class for collapsing review text;
+
+  [FAQ Section]:
+  - Create different answers for accordion with AI;
+  - Improve hiding/showing animation;
