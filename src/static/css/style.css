@@ -4550,6 +4550,7 @@ div.wave-block:nth-child(17):after {
 }
 
 .msg-active~.msg {
+  padding-top: 10px;
   position: relative;
   overflow: hidden;
   max-height: 100%;
@@ -4574,7 +4575,7 @@ div.wave-block:nth-child(17):after {
   line-height: 25px;
   font-size: 14px;
   color: #322823;
-  padding: 20px 40px;
+  padding: 10px 40px;
 }
 
 @media (max-width: 575px) {
