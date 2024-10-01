@@ -11,7 +11,9 @@ Improvements:
   - Increase the font size for narrow screens;
 
   [Repair Types Popup]:
-  - Close popup by clicking outside of the popup’s window;
+  - Close popup by clicking outside of the popup’s window; @done
+  - ('.popup-repair-types-content__head-date') Set current date;
+  - ('.popup-repair-types-content__head-date') Small bug, when hover on date;
 
   [Phone Number Inputs]:
   - Find out how to make brackets and dashes enter right at the time of typing, not at the end;
