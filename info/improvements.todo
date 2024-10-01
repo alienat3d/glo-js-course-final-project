@@ -4,6 +4,7 @@ Improvements:
   - Check HTML structure + "alt" attributes for images (esp. Portfolio section needs a review);
   - Add license information for photos from stocks;
   - Refactor modules: make an universal module for sliders & popups [dry];
+  - If any form has been sent, say this to the user and ask if he really wants to ask a new request;
 
   [Header Nav Menu]:
   - CSS replace 'translate3d's with 'translateX';

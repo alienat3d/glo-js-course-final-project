@@ -1,3 +1,5 @@
+import { thankPopupFunc } from "./thank-popup";
+
 export const sendFormFunc = () => {
   const forms = document.querySelectorAll('form');
 
@@ -49,6 +51,7 @@ export const sendFormFunc = () => {
         .then(() => {
           formInputs.forEach(input => input.value = '');
           formCheckbox.checked = false;
+          thankPopupFunc();
         })
         .catch(error => console.warn(error.message));
     } else {
