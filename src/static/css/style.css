@@ -5249,14 +5249,17 @@ div.wave-block:nth-child(17):after {
   }
 }
 
-.popup-repair-types-nav__item {
+.button_o.popup-repair-types-nav__item {
   width: 305px;
   height: 38px;
   margin-top: 22px;
   text-align: left;
   padding-left: 22px;
-  border: 3px solid #EEEBE5 !important;
-  border-radius: 20px !important;
+  border: 3px solid #EEEBE5;
+  border-radius: 20px;
+}
+.button_o.popup-repair-types-nav__item.active {
+  border-color: #fba600;
 }
 
 @media (max-width: 1024px) {
@@ -8662,6 +8665,7 @@ strong {
 
 @media (max-width: 575px) {
   .mobile-row {
+    margin-bottom: 20px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
