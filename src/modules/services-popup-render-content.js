@@ -27,6 +27,7 @@ export const servicesPopupRenderContentFunc = () => {
   }
 
   const renderSidebar = (data) => {
+    navSidebarContainer.innerHTML = '';
     const types = new Set();
     data.forEach(obj => types.add(obj.type));
 
@@ -43,6 +44,7 @@ export const servicesPopupRenderContentFunc = () => {
   }
 
   const renderContent = (data, currentType) => {
+    contentContainer.innerHTML = '';
     data.forEach(obj => {
       if (obj.type === currentType) {
         contentContainer.insertAdjacentHTML('beforeend', `
@@ -79,7 +81,6 @@ export const servicesPopupRenderContentFunc = () => {
         if (button.classList.contains('active')) button.classList.remove('active');
       });
       tgt.classList.add('active');
-      contentContainer.innerHTML = '';
       type = tgt.textContent;
       serviceTypeTitle.textContent = tgt.textContent;
       getData().then((data) => renderContent(data, type));
@@ -133,7 +134,6 @@ export const servicesPopupRenderContentFunc = () => {
           if (button.classList.contains('active')) type = button.textContent;
         });
         serviceTypeTitle.textContent = type;
-        contentContainer.innerHTML = '';
         getData().then((data) => renderContent(data, type));
       });
     }, 500);

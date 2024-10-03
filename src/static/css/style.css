@@ -4754,6 +4754,7 @@ div.wave-block:nth-child(17):after {
 }
 
 .copyright__subtitle {
+  cursor: pointer;
   color: #BBBBBB;
 }
 
@@ -9322,3 +9323,4 @@ strong {
 form {
   position: relative
 }
+

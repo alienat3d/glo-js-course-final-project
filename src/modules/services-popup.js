@@ -7,9 +7,6 @@ export const servicesPopupFunc = () => {
   const repairTypesServicesButton = document.querySelector('.repair-types-tab a');
   const repairTypesPopup = document.querySelector('.popup-repair-types');
 
-  servicesPopupRenderContentFunc();
-  modalAppearAnimation(repairTypesPopup);
-
   headerNavMenuServicesButton.addEventListener('click', (evt) => {
     evt.preventDefault();
     toggleActiveClass(navMenuBlock, 'showHide-menu');
