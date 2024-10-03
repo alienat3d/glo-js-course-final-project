@@ -1,6 +1,9 @@
+import { measureWindowWidth, modalAppearAnimation, modalDisappearAnimation } from "./helpers";
+
 export const servicesPopupRenderContentFunc = () => {
   const SERVER_URL = './db/db.json';
   const dayMilliseconds = 24 * 60 * 60 * 1000;
+  const windowWidth = measureWindowWidth();
 
   const navSidebarContainer = document.querySelector('.nav-list-popup-repair');
   const serviceTypeTitle = document.querySelector('.popup-repair-types-content__head-title');
@@ -81,5 +84,58 @@ export const servicesPopupRenderContentFunc = () => {
       serviceTypeTitle.textContent = tgt.textContent;
       getData().then((data) => renderContent(data, type));
     }
-  })
+  });
+
+  if (windowWidth < 1008) {
+    const navWrapper = document.querySelector('.popup-repair-types .nav-wrap');
+
+    let currentSlide = 0;
+
+    const prevNavSlide = (elems, idx, hideClass, activeClass) => {
+      modalDisappearAnimation(elems[idx]);
+      elems[idx].classList.add(hideClass);
+      elems[idx].classList.remove(activeClass);
+    };
+
+    const nextNavSlide = (elems, idx, hideClass, activeClass) => {
+      elems[idx].classList.add(activeClass);
+      elems[idx].classList.remove(hideClass);
+      modalAppearAnimation(elems[idx]);
+    };
+
+    setTimeout(() => {
+      const navButtons = navSidebarContainer.querySelectorAll('.button_o');
+
+      navButtons.forEach(button => {
+        if (!button.classList.contains('active')) button.classList.add('hide');
+      });
+
+      navWrapper.addEventListener('click', (evt) => {
+        if (!evt.target.matches('.nav-arrow')) return;
+
+        prevNavSlide(navButtons, currentSlide, 'hide', 'active');
+
+        if (evt.target.closest('#nav-arrow-popup-repair_left')) {
+          currentSlide--;
+        } else if (evt.target.closest('#nav-arrow-popup-repair_right')) {
+          currentSlide++;
+        }
+        if (currentSlide >= navButtons.length) currentSlide = 0;
+        if (currentSlide < 0) currentSlide = navButtons.length - 1;
+
+        navButtons.forEach(button => {
+          if (button.classList.contains('active')) type = button.textContent;
+        });
+
+        nextNavSlide(navButtons, currentSlide, 'hide', 'active');
+
+        navButtons.forEach(button => {
+          if (button.classList.contains('active')) type = button.textContent;
+        });
+        serviceTypeTitle.textContent = type;
+        contentContainer.innerHTML = '';
+        getData().then((data) => renderContent(data, type));
+      });
+    }, 500);
+  }
 }
