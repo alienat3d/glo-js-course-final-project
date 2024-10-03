@@ -1,12 +1,13 @@
 export const servicesPopupRenderContentFunc = () => {
   const SERVER_URL = './db/db.json';
-  const date = new Date();
+  const dayMilliseconds = 24 * 60 * 60 * 1000;
 
   const navSidebarContainer = document.querySelector('.nav-list-popup-repair');
   const serviceTypeTitle = document.querySelector('.popup-repair-types-content__head-title');
   const dateBlock = document.querySelector('.popup-repair-types-content__head-date span');
   const contentContainer = document.querySelector('.popup-repair-types-content-table__list tbody');
 
+  let date = new Date();
   let activeButton;
   let type;
 
@@ -61,6 +62,8 @@ export const servicesPopupRenderContentFunc = () => {
     renderContent(data, type);
   });
 
+  date.setTime(date.getTime() - dayMilliseconds);
+
   dateBlock.textContent = new Intl.DateTimeFormat('ru',
     { year: 'numeric', month: 'long', day: 'numeric' })
     .format(date);
@@ -75,6 +78,7 @@ export const servicesPopupRenderContentFunc = () => {
       tgt.classList.add('active');
       contentContainer.innerHTML = '';
       type = tgt.textContent;
+      serviceTypeTitle.textContent = tgt.textContent;
       getData().then((data) => renderContent(data, type));
     }
   })

@@ -5257,6 +5257,7 @@ div.wave-block:nth-child(17):after {
   padding-left: 22px;
   border: 3px solid #EEEBE5;
   border-radius: 20px;
+  transition: border-color .25s ease;
 }
 .button_o.popup-repair-types-nav__item.active {
   border-color: #fba600;
