@@ -15,6 +15,7 @@ import { contractPopupSliderFunc } from "./modules/contract-popup-slider";
 import { consultationPopupFunc } from "./modules/consultation-popup";
 import { reviewsSliderFunc } from "./modules/reviews-slider";
 import { faqAccordionFunc } from "./modules/faq-accordion";
+import { servicesSliderFunc } from "./modules/services-slider";
 
 
 headerPhonesAccordionFunc();
@@ -34,5 +35,6 @@ contractPopupSliderFunc();
 consultationPopupFunc();
 reviewsSliderFunc();
 faqAccordionFunc();
+servicesSliderFunc();
 
 window.addEventListener("DOMContentLoaded", () => console.info('Website is loaded.'));
