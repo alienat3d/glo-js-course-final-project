@@ -8,7 +8,7 @@
   Medium         md        ≥ 768px
   Large          lg        ≥ 992px
   XLarge         xl        ≥ 1200px
-  XXLarge        xxl       ≥ 1400px        
+  XXLarge        xxl       ≥ 1400px
 
 <hr>
 
@@ -16,7 +16,7 @@
   <h2>Screen Resolution Stats Russian Federation 08/2023</h2>
 </a>
 
->Desktop Resolutions: 
+>Desktop Resolutions:
 * 1920 x 1080 (38%)
 * 1366 x 768  (10%)
 * 1536 x 864  (10%)
@@ -88,6 +88,12 @@
 * Samsung Internet (2%)
 * Opera            (1,5%)
 * Firefox          (0,4%)
+
+<hr>
+
+<h2>Scrollbar width</h2>
+
+17px
 
 <hr>
 
