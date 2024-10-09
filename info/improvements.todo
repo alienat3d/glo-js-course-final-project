@@ -5,6 +5,7 @@ Improvements:
   - Add license information for photos from stocks;
   - Refactor modules: make an universal module for sliders & popups [dry];
   - If any form has been sent, say this to the user and ask if he really wants to ask a new request;
+  - When one of the popups is shown, the scroll down is blocked and the width is compensated via margin on the right side of the screen;
 
   [Header Nav Menu]:
   - CSS replace 'translate3d's with 'translateX';
