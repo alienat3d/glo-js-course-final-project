@@ -43,3 +43,6 @@ Improvements:
   [FAQ Section]:
   - Create different answers for accordion with AI;
   - Improve hiding/showing animation;
+
+  [Portfolio Slider]:
+  - Refactor code;

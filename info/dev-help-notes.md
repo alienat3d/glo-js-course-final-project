@@ -13,36 +13,37 @@
 <hr>
 
 <a href="https://gs.statcounter.com/screen-resolution-stats/desktop/russian-federation">
-  <h2>Screen Resolution Stats Russian Federation 08/2023</h2>
+  <h2>Screen Resolution Stats Russian Federation 09/2024</h2>
 </a>
 
 >Desktop Resolutions:
-* 1920 x 1080 (38%)
-* 1366 x 768  (10%)
-* 1536 x 864  (10%)
-* 1280 x 1024 (5%)
-* 1600 x 900  (4%)
-* 1440 x 900  (3%)
-* 1280 x 720 (Figma Layout 1:1)
+* 1920 x 1080 (25%)
+* 1366 x 768  (13%)
+* 1536 x 864  (12%)
+* 1280 x 720  (6%)
+* 1440 x 900  (5%)
+* 2560 x 1440 (3%)
+* 1280 x 1024
+* 1600 x 900
 
 >Tablet Resolutions:
 * 768  x 1024 (20%)
+* 810  x 1080 (11%)
+* 820  x 1180 (8%)
 * 1280 x 800  (6%)
-* 1138 x 712  (5%)
-* 810  x 1080 (5%)
-* 960  x 600  (4%)
-* 1024 x 1366 (4%)
-* 800  x 1280
-* 820  x 1180
+* 800  x 1280 (6%)
+* 1024 x 1366 (3%)
+* 1138 x 712
+* 960  x 600
 * 601  x 962
 
 >Mobile Resolutions:
-* 393  x 873  (12%)
-* 360  x 800  (12%)
-* 414  x 896  (9%)
-* 393  x 851  (6%)
-* 390  x 844  (6%)
-* 412  x 915  (5%)
+* 360  x 800  (11%)
+* 390  x 844  (7%)
+* 393  x 873  (6%)
+* 412  x 915  (4%)
+* 414  x 896  (4%)
+* 375  x 812  (4%)
 * 360  x 780
 
 <hr>
