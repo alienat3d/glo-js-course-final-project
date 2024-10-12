@@ -2,7 +2,6 @@ import { measureWindowWidth, modalAppearAnimation, modalDisappearAnimation } fro
 
 export const portfolioSliderFunc = () => {
   const windowWidth = measureWindowWidth();
-  console.log(windowWidth);
 
   const wrapper = document.querySelector('.portfolio-slider-wrap');
   const navButtons = wrapper.querySelectorAll('.slider-arrow');
