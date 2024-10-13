@@ -5,7 +5,10 @@ export const servicesPopupFunc = () => {
   const navMenuBlock = document.querySelector('.popup-dialog-menu');
   const headerNavMenuServicesButton = navMenuBlock.querySelector('.menu-link.no-overflow');
   const repairTypesServicesButton = document.querySelector('.repair-types-tab a');
+  const repairTypesServicesButtonMobile = document.querySelector('.link-list-repair a');
   const repairTypesPopup = document.querySelector('.popup-repair-types');
+
+  const buttonsToOpenPopup = [ repairTypesServicesButton, repairTypesServicesButtonMobile ];
 
   headerNavMenuServicesButton.addEventListener('click', (evt) => {
     evt.preventDefault();
@@ -14,11 +17,13 @@ export const servicesPopupFunc = () => {
     modalAppearAnimation(repairTypesPopup);
   });
 
-  repairTypesServicesButton.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    servicesPopupRenderContentFunc();
-    modalAppearAnimation(repairTypesPopup);
-  });
+  buttonsToOpenPopup.forEach(button =>
+    button.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      servicesPopupRenderContentFunc();
+      modalAppearAnimation(repairTypesPopup);
+    })
+  );
 
   repairTypesPopup.addEventListener('click', (evt) => {
     const tgt = evt.target;
