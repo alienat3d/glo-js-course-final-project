@@ -29,6 +29,12 @@ Improvements:
   - Add smooth appearing & disappearing animation;
   - Close popup by clicking outside of the popup’s window;
 
+  [Privacy Popup]:
+  - On tablets & mobile devices show tooltip by clicking on a date;
+
+  [Transparency Popup]:
+  - On widths <= 414px add titles to the photos;
+
   [Repair Types Section]:
   - Make showing animation more smooth & slow;
   - Fix memory lack through adding excessive event listeners; @done
@@ -43,6 +49,10 @@ Improvements:
   [FAQ Section]:
   - Create different answers for accordion with AI;
   - Improve hiding/showing animation;
+  - Add buttons, which will extend height of content by clicking on it;
 
   [Portfolio Slider]:
   - Refactor code;
+
+  [.stock__love-icon]:
+  - Fills heart icon by hovering on it;

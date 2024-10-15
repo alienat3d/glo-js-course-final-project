@@ -2496,6 +2496,7 @@ div.wave-block:nth-child(17):after {
 @media (max-width: 575px) {
   .transparency {
     padding-top: 65px;
+    padding-bottom: 50px;
   }
 }
 
@@ -2673,6 +2674,7 @@ div.wave-block:nth-child(17):after {
 .transparency-item__descr {
   margin-top: 7px;
   width: 343px;
+  min-height: 100px;
   text-align: center;
   font-size: 16px;
   line-height: 24px;
@@ -3407,7 +3409,7 @@ div.wave-block:nth-child(17):after {
 
 @media (max-width: 575px) {
   .stock {
-    margin-top: -27px;
+    margin-top: -30px;
   }
 }
 
@@ -5101,7 +5103,7 @@ div.wave-block:nth-child(17):after {
   .popup-dialog-transparency {
     width: 320px;
     height: 493px;
-    border-radius: 0;
+    /* border-radius: 0; */
   }
 }
 
@@ -5559,8 +5561,9 @@ div.wave-block:nth-child(17):after {
   -ms-flex-align: center;
   align-items: center;
   bottom: 26px;
-  left: 50%;
+  left: 10%;
   margin-left: -77px;
+  padding-bottom: 1px;
   width: 154px;
   height: 25px;
   content: 'Последние изменения';
@@ -7814,6 +7817,7 @@ div.wave-block:nth-child(17):after {
   #nav-arrow-popup-repair_left {
     left: 19.8%;
   }
+
   #nav-arrow-popup-repair_right {
     right: 20%;
   }
@@ -7843,6 +7847,7 @@ div.wave-block:nth-child(17):after {
   #nav-arrow-popup-repair_left {
     left: 4%;
   }
+
   #nav-arrow-popup-repair_right {
     right: 4.6%;
   }
@@ -7922,7 +7927,7 @@ div.wave-block:nth-child(17):after {
 
 @media (max-width: 575px) {
   .popup-arrow_transparency_left {
-    left: 0;
+    left: -8px;
     margin-left: 10px;
   }
 }
@@ -7933,7 +7938,7 @@ div.wave-block:nth-child(17):after {
 
 @media (max-width: 575px) {
   .popup-arrow_transparency_right {
-    right: 0;
+    right: -5px;
     margin-right: 10px;
   }
 }
@@ -7960,9 +7965,30 @@ div.wave-block:nth-child(17):after {
   box-shadow: 0px 0px 10px rgba(50, 40, 35, 0.1);
 }
 
-/* z-index: 10; */
-/* ml-22 */
-/* b-22 */
+.popup-transparency .slider-counter {
+  width: 50px;
+  height: 50px;
+  bottom: 0;
+  transform: translateY(50%);
+}
+
+@media (max-width: 800px) {
+  .popup-transparency .slider-counter {
+    width: 47px;
+    height: 47px;
+  }
+}
+
+@media (max-width: 414px) {
+  .popup-transparency .slider-counter {
+    width: 40px;
+    height: 40px;
+  }
+  .popup-transparency .slider-counter-content {
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 1024px) {
   .slider-counter-responsive {
     z-index: 10;
@@ -8113,6 +8139,7 @@ div.wave-block:nth-child(17):after {
     top: 1.4%;
     right: 3.6%;
   }
+
   .popup-repair-types .close {
     right: 2.9%;
   }
@@ -8122,6 +8149,7 @@ div.wave-block:nth-child(17):after {
   .popup-portfolio .close {
     top: .7%;
   }
+
   .popup-repair-types .close {
     right: 3.8%;
   }
