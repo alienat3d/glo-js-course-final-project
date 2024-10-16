@@ -7866,6 +7866,11 @@ div.wave-block:nth-child(17):after {
 }
 
 @media (max-width: 414px) {
+  #nav-arrow-popup-repair_left,
+  #nav-arrow-popup-repair_right {
+    top: 69%;
+  }
+
   #nav-arrow-popup-repair_left {
     left: 4%;
   }
@@ -9870,4 +9875,8 @@ strong {
 
 form {
   position: relative
+}
+
+.link-privacy {
+  text-decoration: underline;
 }
