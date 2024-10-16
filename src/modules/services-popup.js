@@ -3,18 +3,20 @@ import { toggleActiveClass, modalAppearAnimation, modalDisappearAnimation } from
 
 export const servicesPopupFunc = () => {
   const navMenuBlock = document.querySelector('.popup-dialog-menu');
-  const headerNavMenuServicesButton = navMenuBlock.querySelector('.menu-link.no-overflow');
+  const headerNavMenuServicesButtons = document.querySelectorAll('.menu-link.no-overflow');
   const repairTypesServicesButton = document.querySelector('.repair-types-tab a');
   const repairTypesServicesButtonMobile = document.querySelector('.link-list-repair a');
   const repairTypesPopup = document.querySelector('.popup-repair-types');
 
   const buttonsToOpenPopup = [ repairTypesServicesButton, repairTypesServicesButtonMobile ];
 
-  headerNavMenuServicesButton.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    toggleActiveClass(navMenuBlock, 'showHide-menu');
-    servicesPopupRenderContentFunc();
-    modalAppearAnimation(repairTypesPopup);
+  headerNavMenuServicesButtons.forEach(button => {
+    button.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      toggleActiveClass(navMenuBlock, 'showHide-menu');
+      servicesPopupRenderContentFunc();
+      modalAppearAnimation(repairTypesPopup);
+    });
   });
 
   buttonsToOpenPopup.forEach(button =>
