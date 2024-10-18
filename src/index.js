@@ -16,8 +16,6 @@ import { consultationPopupFunc } from "./modules/consultation-popup";
 import { reviewsSliderFunc } from "./modules/reviews-slider";
 import { faqAccordionFunc } from "./modules/faq-accordion";
 import { servicesSliderFunc } from "./modules/services-slider";
-import { authFunc } from "./modules/admin/auth";
-
 
 headerPhonesAccordionFunc();
 headerMenuRolloutFunc();
@@ -37,8 +35,5 @@ consultationPopupFunc();
 reviewsSliderFunc();
 faqAccordionFunc();
 servicesSliderFunc();
-
-// == Панель администратора ==
-authFunc();
 
 window.addEventListener("DOMContentLoaded", () => console.info('Website is loaded.'));

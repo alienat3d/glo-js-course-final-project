@@ -1,65 +1,82 @@
+// VideoURL: https://www.youtube.com/watch?v=IZGNcSuwBZs
+
 const path = require('path');
-const webpack = require('webpack');
-const miniCss = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin'); // минифицирует и переносит HTML-файл в папку dist. А также он подключит JS & CSS автоматически и можно их уже не подключать в .html-файле.
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
-  entry: {
-    main: './src/index.js',
-    // second: './src/second.js',
-  }, // теперь мы можем подключить несколько точек входа
-  output: {
-    filename: './js/[name].min.js', // [name] значит, что сюда прилетит аналогичное название, которая у нас в точке входа
-    path: path.resolve(__dirname, 'docs'), // указывает Webpack куда именно собирать сборку
-  },
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'docs'),
-    },
-    compress: true,
-    port: 9000,
-    hot: true,
-    open: true,
-  },
-  module: {
-    // rules - команды обработки и первая команда отвечает за обработку CSS
-    // test - когда Webpack начинает сканировать файлы, мы регуляркой отыскиваем все файлы с расширением css и обрабатываем данные файлы несколькими пакетами.
-    rules: [
-      {
-        test: /\.(s*)css$/,
-        use: [miniCss.loader, 'css-loader', 'sass-loader'],
-      },
-    ],
-  },
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        styles: {
-          name: 'styles',
-          type: 'css/mini-extract',
-          chunks: 'all',
-          enforce: true,
-        },
-      },
-    },
-  },
-  devtool: false,
-  plugins: [
-    new miniCss({
-      filename: 'css/style.min.css',
-    }),
+	mode: 'development',
+	entry: {
+		/* a multiple entry points example */
+		bundle: path.resolve(__dirname, 'src/index.js'), /* set a path to an entry point */
+		admin: path.resolve(__dirname, 'src/admin-index.js'),
+	},
+	output: {
+		path: path.resolve(__dirname, 'dist'),
+		filename: '[name].[contenthash].js', /* set name from entry and add hash for better caching */
+		clean: true, /* clean older files */
+		assetModuleFilename: '[name][ext]'
+	},
+	devtool: 'source-map', /* add source maps */
+	devServer: {
+		static: {
+			directory: path.resolve(__dirname, 'dist') /* set a folder where the devServer will look for files */
+		},
+		port: 3000, /* set a custom port */
+		open: true, /* opens a new page in browser by starting the script */
+		hot: true, /* a hot reload */
+		compress: true, /* compress in GZip */
+		historyApiFallback: true,
+	},
+	module: {
+		rules: [
+			{
+				/* select loaders for specific extensions */
+				test: /\.scss$/,
+				use: ['style-loader', 'css-loader', 'sass-loader']
+			},
+			{
+				/* for older browsers support */
+				test: /\.js$/,
+				exclude: /node_modules/,
+				use: {
+					loader: 'babel-loader',
+					options: {
+						presets: ['@babel/preset-env'],
+					},
+				},
+			},
+			{
+				test: /\.(png|svg|jpg|jpeg|webp|avif|gif)$/i,
+				type: 'asset/resource'
+			}
+		]
+	},
+	plugins: [
+		new HtmlWebpackPlugin({
+			title: 'Relax Live', /* custom title */
+			filename: 'index.html', /* target HTML */
+			chunks: ['bundle'], /* select JS-bundle */
+			template: 'src/template-index.html' /* select HTML template */
+		}),
+		new HtmlWebpackPlugin({
+			title: 'Вход для администрации «Relax Live»',
+			filename: 'admin.html',
+			chunks: ['admin'],
+			template: 'src/template-admin-index.html'
+		}),
+		new HtmlWebpackPlugin({
+			title: 'Администрация «Relax Live»',
+			filename: 'table.html',
+			chunks: ['admin'],
+			template: 'src/template-admin-table.html'
+		}),
     new CopyWebpackPlugin({
       patterns: [
         { from: 'src/static' }
       ]
     }),
-    new HtmlWebpackPlugin({
-      template: 'src/index.html',
-    }),
-    new webpack.SourceMapDevToolPlugin({
-      filename: '[file].map[query]',
-      exclude: ['vendor.js'],
-    }),
-  ],
-};
+		// new BundleAnalyzerPlugin()
+	]
+}
