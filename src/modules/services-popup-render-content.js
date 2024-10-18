@@ -1,4 +1,4 @@
-import { measureWindowWidth, modalAppearAnimation, modalDisappearAnimation } from "./helpers";
+import { measureWindowWidth, modalAppearAnimation, modalDisappearAnimation, getData } from "./helpers";
 
 export const servicesPopupRenderContentFunc = () => {
   const SERVER_URL = './db/db.json';
@@ -13,18 +13,6 @@ export const servicesPopupRenderContentFunc = () => {
   let date = new Date();
   let activeButton;
   let type;
-
-  const getData = () => {
-    return fetch(SERVER_URL)
-      .then(res => {
-        if (res.status === 200) {
-          return res.json();
-        } else {
-          throw new Error("Произошла ошибка, данные не были найдены!");
-        }
-      })
-      .catch(error => console.warn(error));
-  }
 
   const renderSidebar = (data) => {
     navSidebarContainer.innerHTML = '';
@@ -62,9 +50,9 @@ export const servicesPopupRenderContentFunc = () => {
     });
   }
 
-  getData().then((data) => renderSidebar(data));
+  getData(SERVER_URL).then((data) => renderSidebar(data));
 
-  getData().then((data) => {
+  getData(SERVER_URL).then((data) => {
     type = data['works'][0].type;
     renderContent(data, type);
   });
@@ -85,7 +73,7 @@ export const servicesPopupRenderContentFunc = () => {
       tgt.classList.add('active');
       type = tgt.textContent;
       serviceTypeTitle.textContent = tgt.textContent;
-      getData().then((data) => renderContent(data, type));
+      getData(SERVER_URL).then((data) => renderContent(data, type));
     }
   });
 
@@ -136,7 +124,7 @@ export const servicesPopupRenderContentFunc = () => {
           if (button.classList.contains('active')) type = button.textContent;
         });
         serviceTypeTitle.textContent = type;
-        getData().then((data) => renderContent(data, type));
+        getData(SERVER_URL).then((data) => renderContent(data, type));
       });
     }, 500);
   }
