@@ -29,7 +29,8 @@ export const servicesPopupRenderContentFunc = () => {
   const renderSidebar = (data) => {
     navSidebarContainer.innerHTML = '';
     const types = new Set();
-    data.forEach(obj => types.add(obj.type));
+
+    data['works'].forEach(obj => types.add(obj.type));
 
     types.forEach(type =>
       navSidebarContainer.insertAdjacentHTML('beforeend', `
@@ -45,7 +46,8 @@ export const servicesPopupRenderContentFunc = () => {
 
   const renderContent = (data, currentType) => {
     contentContainer.innerHTML = '';
-    data.forEach(obj => {
+
+    data['works'].forEach(obj => {
       if (obj.type === currentType) {
         contentContainer.insertAdjacentHTML('beforeend', `
           <tr class="mobile-row showHide">
@@ -63,7 +65,7 @@ export const servicesPopupRenderContentFunc = () => {
   getData().then((data) => renderSidebar(data));
 
   getData().then((data) => {
-    type = data[0].type;
+    type = data['works'][0].type;
     renderContent(data, type);
   });
 
