@@ -56,3 +56,7 @@ Improvements:
 
   [.stock__love-icon]:
   - Fills heart icon by hovering on it;
+
+[Admin Panel]:
+  [auth.js]:
+    - Add more users to db and check if username fits to it’s password;

@@ -633,8 +633,16 @@
   ],
   "users": [
     {
+      "login": "user",
+      "password": "12345678"
+    },
+    {
       "login": "admin",
       "password": "a123"
+    },
+    {
+      "login": "user87",
+      "password": "qwerty0"
     }
   ]
 }
