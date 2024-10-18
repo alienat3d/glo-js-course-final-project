@@ -62,13 +62,13 @@ module.exports = {
 		}),
 		new HtmlWebpackPlugin({
 			title: 'Вход для администрации «Relax Live»',
-			filename: 'admin.html',
+			filename: 'admin/index.html',
 			chunks: ['admin'],
 			template: 'src/template-admin-index.html'
 		}),
 		new HtmlWebpackPlugin({
 			title: 'Администрация «Relax Live»',
-			filename: 'table.html',
+			filename: 'admin/table.html',
 			chunks: ['admin'],
 			template: 'src/template-admin-table.html'
 		}),
