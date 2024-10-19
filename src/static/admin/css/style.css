@@ -14,7 +14,6 @@
   font-style: normal;
 }
 
-
 @font-face {
   font-family: 'Open Sans';
   src: url("../fonts/OpenSans-Bold.woff2"), url("../fonts/OpenSans-Bold.woff");
@@ -47,7 +46,6 @@ body {
   background-color: #F5F5F5;
 }
 
-
 /* UI компоненты и стили*/
 
 .button {
@@ -77,6 +75,10 @@ body {
   margin: 3px;
 }
 
+.btn-addItem .svg_ui {
+  margin: 0;
+}
+
 .svg__loader {
   margin: 90px;
   width: 80px;
@@ -88,7 +90,6 @@ body {
   0% {
     transform: rotate(0deg);
   }
-
   100% {
     transform: rotate(360deg);
   }
@@ -167,10 +168,6 @@ body {
   display: flex;
 }
 
-
-
-
-
 .header {
   display: flex;
   align-items: center;
@@ -185,7 +182,6 @@ body {
   vertical-align: bottom;
   fill: var(--firm_color);
 }
-
 
 .search_input {
   height: 44px;
@@ -214,7 +210,6 @@ body {
     height: 24px;
   }
 }
-
 
 /*   main   */
 
@@ -278,7 +273,6 @@ body {
   white-space: nowrap;
 }
 
-
 .action-remove,
 .action-change {
   padding: 3px;
@@ -336,7 +330,6 @@ body {
   fill: white;
 }
 
-
 /*   form   */
 
 .input-wrapper {
@@ -351,7 +344,6 @@ body {
   padding: 8px 5px;
   color: var(--black-color);
   font-weight: 600;
-
 }
 
 .input:focus {
@@ -410,7 +402,6 @@ body {
   min-width: 728px;
   width: 100%;
   border-collapse: collapse;
-
 }
 
 .table-th {
@@ -450,7 +441,6 @@ body {
   min-width: 130px;
 }
 
-
 .sorting {
   transform: rotate(180deg);
 }
@@ -486,6 +476,9 @@ body {
   color: var(--txt_grey);
 }
 
+.table-units {
+  padding-left: 41px;
+}
 
 .icon-sort {
   width: 8px;

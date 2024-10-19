@@ -5,6 +5,8 @@ export const authFunc = () => {
   const currentURL = window.location.pathname;
   const currentHost = window.location.host;
 
+  if (currentURL === '/admin') window.location.href = `http://${currentHost}/admin/index.html`;
+
   if (currentURL === '/admin/index.html' || currentURL === '/admin/') {
     const usernameInput = document.querySelector('#username');
     const usernameWarning = usernameInput.nextElementSibling;
@@ -60,7 +62,7 @@ export const authFunc = () => {
     }
 
     if ((currentURL === '/admin/index.html' || currentURL === '/admin/') && isAuth) {
-      window.location.href = `http://${currentHost}/admin/table.html`;
+        window.location.href = `http://${currentHost}/admin/table.html`;
     }
 
     usernameInput.addEventListener('input', (evt) => {
