@@ -46,11 +46,21 @@ const getData = (url) => {
     .catch(error => console.warn(error));
 }
 
+
+const getCookie = () => {
+    return document.cookie.split('; ').reduce((acc, item) => {
+      const [name, value] = item.split('=')
+      acc[name] = value
+      return acc
+    }, {})
+  }
+
 export {
   toggleActiveClass,
   measureWindowWidth,
   phoneSymbolsOnly,
   modalAppearAnimation,
   modalDisappearAnimation,
-  getData
+  getData,
+  getCookie
 };
