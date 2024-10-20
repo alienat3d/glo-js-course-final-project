@@ -46,14 +46,37 @@ const getData = (url) => {
     .catch(error => console.warn(error));
 }
 
+const saveData = (url, method, obj) => {
+  return fetch(url, {
+    method: method,
+    body: JSON.stringify(obj),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(res => {
+      if (res.status === 201) {
+        return res.json();
+      } else {
+        throw new Error("Произошла ошибка, данные не были сохранены!");
+      }
+    })
+    .catch(error => {
+      console.warn(error);
+    });
+}
 
 const getCookie = () => {
-    return document.cookie.split('; ').reduce((acc, item) => {
-      const [name, value] = item.split('=')
-      acc[name] = value
-      return acc
-    }, {})
-  }
+  return document.cookie.split('; ').reduce((acc, item) => {
+    const [name, value] = item.split('=')
+    acc[name] = value
+    return acc
+  }, {})
+}
+
+const generateId = (minValue, maxValue) => {
+  return Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
+}
 
 export {
   toggleActiveClass,
@@ -62,5 +85,7 @@ export {
   modalAppearAnimation,
   modalDisappearAnimation,
   getData,
-  getCookie
+  saveData,
+  getCookie,
+  generateId
 };

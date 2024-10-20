@@ -58,5 +58,9 @@ Improvements:
   - Fills heart icon by hovering on it;
 
 [Admin Panel]:
-  [auth.js]:
+  [index]:
     - Add more users to db and check if username fits to it’s password;
+  [table]:
+    - Add select instead of input to modal for types where all types exist in DB;
+    - Add an ID generator for the IDs of the new items;
+    - Add toaster notification for successful addition of item;
