@@ -14,6 +14,8 @@ if (currentURL === '/admin') window.location.href = `http://${currentHost}/admin
 
 if ((currentURL === '/admin/index.html' || currentURL === '/admin/') && isAuth) {
   window.location.href = `http://${currentHost}/admin/table.html`;
+} else if ((currentURL === '/admin/table.html') && !isAuth) {
+  window.location.href = `http://${currentHost}/admin/index.html`;
 }
 
 if (currentURL === '/admin/index.html' || currentURL === '/admin/') {

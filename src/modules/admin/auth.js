@@ -1,7 +1,7 @@
 import { getData } from "../helpers";
 
 export const authFunc = () => {
-  const SERVER_URL = '../db/db.json';
+  const SERVER_URL = 'http://localhost:4545/users';
   const currentHost = window.location.host;
 
   const usernameInput = document.querySelector('#username');
@@ -15,7 +15,7 @@ export const authFunc = () => {
   let passwordInputValue;
 
   const checkUsernames = (data) => {
-    if (data.users[0].login === usernameInputValue) {
+    if (data[0].login === usernameInputValue) {
       isLoginCorrect = true;
     } else {
       usernameWarning.classList.remove('hidden');
@@ -24,9 +24,9 @@ export const authFunc = () => {
   }
 
   const checkPasswords = (data) => {
-    if (data.users[0].password === passwordInputValue && !isLoginCorrect) {
+    if (data[0].password === passwordInputValue && !isLoginCorrect) {
       return;
-    } else if (data.users[0].password === passwordInputValue && isLoginCorrect) {
+    } else if (data[0].password === passwordInputValue && isLoginCorrect) {
       document.cookie = `auth=true;samesite=strict;max-age=25920`;
       window.location.href = `http://${currentHost}/admin/table.html`;
     } else {
@@ -41,6 +41,7 @@ export const authFunc = () => {
   }
 
   usernameInput.addEventListener('input', (evt) => {
+    isLoginCorrect = false;
     if (!usernameWarning.classList.contains('hidden')) {
       usernameWarning.classList.add('hidden');
     }

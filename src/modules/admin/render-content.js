@@ -1,7 +1,7 @@
 import { getData } from "../helpers";
 
 export const renderContentFunc = () => {
-  const SERVER_URL = '../db/db.json';
+  const SERVER_URL = 'http://localhost:4545/works';
 
   const contentContainer = document.getElementById('tbody');
   const selectType = document.getElementById('typeItem');
@@ -42,9 +42,9 @@ export const renderContentFunc = () => {
     contentContainer.innerHTML = '';
 
     if (currentType === 'Все услуги') {
-      data['works'].forEach(obj => renderTable(obj));
+      data.forEach(obj => renderTable(obj));
     } else {
-      data['works'].forEach(obj => {
+      data.forEach(obj => {
         if (obj.type === currentType) renderTable(obj);
       });
     }
@@ -52,7 +52,7 @@ export const renderContentFunc = () => {
 
   const renderOptions = (data) => {
     const types = new Set();
-    data['works'].forEach(obj => types.add(obj.type));
+    data.forEach(obj => types.add(obj.type));
     types.forEach(type => {
       selectType.insertAdjacentHTML('beforeend', `
         <option value="${type}">${type}</option>

@@ -386,7 +386,8 @@ body {
   border: none;
   color: var(--black-color);
   font-weight: 600;
-  margin: 10px auto 25px;
+  /* margin: 10px auto 25px; */
+  margin: 10px auto 5px;
   text-decoration: underline;
 }
 
