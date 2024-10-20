@@ -1,4 +1,4 @@
-import { modalAppearAnimation, modalDisappearAnimation, saveData } from "../helpers";
+import { modalAppearAnimation, modalDisappearAnimation, saveData, generateId } from "../helpers";
 
 export const modalFunc = () => {
   const SERVER_URL = 'http://localhost:4545/works';
@@ -10,13 +10,20 @@ export const modalFunc = () => {
   const saveButton = modal.querySelector('.button-ui_firm');
 
   const newWorkObject = {
+    id: 0,
     type: '',
     name: '',
     units: '',
     cost: 0
   }
 
+  const closeModal = () => {
+    modalDisappearAnimation(modal);
+    setTimeout(() => modal.classList.remove('modal-opened'), 200);
+  }
+
   const saveNewWork = () => {
+    newWorkObject.id = generateId();
     newWorkObject.type = modalInputs[0].value;
     newWorkObject.name = modalInputs[1].value;
     newWorkObject.units = modalInputs[2].value;
@@ -29,10 +36,7 @@ export const modalFunc = () => {
     modalAppearAnimation(modal);
   });
 
-  closeButton.addEventListener('click', () => {
-    modalDisappearAnimation(modal);
-    setTimeout(() => modal.classList.remove('modal-opened'), 200);
-  });
+  closeButton.addEventListener('click', closeModal);
 
   saveButton.addEventListener('click', (evt) => {
     evt.preventDefault();

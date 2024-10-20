@@ -74,8 +74,12 @@ const getCookie = () => {
   }, {})
 }
 
-const generateId = (minValue, maxValue) => {
-  return Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
+const generateId = () => {
+  let numbersString = (Math.floor(Math.random() * (9 - 0 + 1)) + 0).toString();
+  for (let index = 0; index < 9; index++) {
+    numbersString += (Math.floor(Math.random() * (9 - 0 + 1)) + 0).toString();
+  }
+  return numbersString;
 }
 
 export {
