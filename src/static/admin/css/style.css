@@ -507,8 +507,6 @@ body {
   .th-name {
     min-width: 230px;
   }
-
-
 }
 
 .table__date {
@@ -521,7 +519,6 @@ body {
     flex-direction: column;
   }
 }
-
 
 /*   Модальное окно   */
 
@@ -559,8 +556,6 @@ body {
   margin-bottom: 30px;
 }
 
-
-
 .button__close {
   position: absolute;
   top: 20px;
@@ -578,4 +573,8 @@ body {
 
 .hidden {
   visibility: hidden;
+}
+
+#modal.modal-opened {
+  display: flex;
 }

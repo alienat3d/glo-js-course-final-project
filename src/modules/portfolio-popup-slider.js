@@ -59,9 +59,7 @@ export const portfolioPopupSliderFunc = () => {
       tgt.classList.contains('close')
     ) {
       modalDisappearAnimation(popup);
-      setTimeout(() => {
-        popup.classList.remove('popup-portfolio-opened');
-      }, 0);
+      setTimeout(() => popup.classList.remove('popup-portfolio-opened'), 200);
     }
 
     if (tgt.closest('.popup-arrow_left')) {

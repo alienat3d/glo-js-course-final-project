@@ -52,9 +52,7 @@ export const contractPopupSliderFunc = () => {
       tgt.classList.contains('close')
     ) {
       modalDisappearAnimation(popup);
-      setTimeout(() => {
-        popup.classList.remove('popup-transparency-opened');
-      }, 0);
+      setTimeout(() => popup.classList.remove('popup-transparency-opened'), 200);
     }
 
     if (tgt.closest('.popup-arrow_transparency_left')) {

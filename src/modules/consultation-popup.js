@@ -19,9 +19,7 @@ export const consultationPopupFunc = () => {
       tgt.classList.contains('close')
     ) {
       modalDisappearAnimation(popup);
-      setTimeout(() => {
-        popup.classList.remove('popup-consultation-opened');
-      }, 0);
+      setTimeout(() => popup.classList.remove('popup-consultation-opened'), 200);
     }
   });
 }
