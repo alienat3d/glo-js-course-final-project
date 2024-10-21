@@ -18,7 +18,6 @@ export const tableFunc = () => {
   const saveButton = modal.querySelector('.button-ui_firm');
   const modalHeading = modal.querySelector('.modal__header');
 
-  let editItemButtons;
   let currentItemId;
   let isEdit = false;
 
@@ -76,7 +75,8 @@ export const tableFunc = () => {
       });
     }
 
-    editItemButtons = document.querySelectorAll('.action-change');
+    const editItemButtons = document.querySelectorAll('.action-change');
+    const delItemButtons = document.querySelectorAll('.action-remove');
 
     setTimeout(() => editItemButtons.forEach(button => {
       button.addEventListener('click', (evt) => {
@@ -87,6 +87,16 @@ export const tableFunc = () => {
         currentItemId = tgt.closest('.table__row').querySelector('.table__id').textContent;
         fillFormFromDB(currentItemId);
         openModal();
+      })
+    }), 200);
+
+    setTimeout(() => delItemButtons.forEach(button => {
+      button.addEventListener('click', (evt) => {
+        const tgt = evt.target;
+        const currentItemId = tgt.closest('.table__row').querySelector('.table__id').textContent;
+        getData(`${SERVER_URL}/${currentItemId}`, 'DELETE');
+        setTimeout(() => getData(SERVER_URL)
+          .then((data) => renderContent(data, selectType.value)), 50);
       })
     }), 200);
   }
