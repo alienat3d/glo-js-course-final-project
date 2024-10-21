@@ -19,6 +19,11 @@ export const tableFunc = () => {
   const modalHeading = modal.querySelector('.modal__header');
 
   let editItemButtons;
+  let currentItemId;
+  let isEdit = false;
+
+  const modalTitlesArray = ['Добавить новую услугу', 'Редактировать услугу'];
+  const modalButtonTextArray = ['Добавить новую услугу', 'Редактировать услугу'];
 
   const newWorkObject = {
     type: '',
@@ -72,13 +77,6 @@ export const tableFunc = () => {
     }
 
     editItemButtons = document.querySelectorAll('.action-change');
-
-    editItemButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        modalHeading.
-        openModal();
-      })
-    });
   }
 
   const renderOptions = (data) => {
@@ -110,6 +108,10 @@ export const tableFunc = () => {
     saveData(SERVER_URL, 'POST', newWorkObject);
   };
 
+  const editWork = (id) => {
+    console.log(id);
+  }
+
   const clearForm = () => {
     modalInputs[0].value = '';
     modalInputs[1].value = '';
@@ -117,24 +119,48 @@ export const tableFunc = () => {
     modalInputs[3].value = '';
   }
 
-  /*       button.addEventListener('click', (evt) => {
-          const tgt = evt.target;
-          const currentId = tgt.closest('.table__row').querySelector('.table__id').textContent;
-          console.log('currentId', currentId)
-          openModal();
-        }) */
+  addItemButton.addEventListener('click', () => {
+    modalHeading.textContent = modalTitlesArray[0];
+    saveButton.textContent = modalButtonTextArray[0];
+    setTimeout(openModal, 10);
+  });
 
-  addItemButton.addEventListener('click', openModal);
-  closeButton.addEventListener('click', closeModal);
+  closeButton.addEventListener('click', () => {
+    closeModal();
+    setTimeout(clearForm, 210);
+  });
 
   saveButton.addEventListener('click', (evt) => {
     evt.preventDefault();
-    saveNewWork();
+
+    isEdit ? editWork(currentItemId) : saveNewWork();
+
     clearForm();
-    // type = selectType.value;
+
     setTimeout(() => getData(SERVER_URL)
       .then((data) => renderContent(data, selectType.value)), 0);
   });
+
+  setTimeout(() => editItemButtons.forEach(button => {
+    button.addEventListener('click', (evt) => {
+      isEdit = true;
+      const tgt = evt.target;
+      modalHeading.textContent = modalTitlesArray[1];
+      saveButton.textContent = modalButtonTextArray[1];
+      currentItemId = tgt.closest('.table__row').querySelector('.table__id').textContent;
+      fillFormFromDB(currentItemId);
+      openModal();
+    })
+  }), 200);
+
+  const fillFormFromDB = (id) => {
+    getData(`${SERVER_URL}/${id}`).then((data) => {
+      modalInputs[0].value = data.type;
+      modalInputs[1].value = data.name;
+      modalInputs[2].value = data.units;
+      modalInputs[3].value = data.cost;
+    });
+  }
 
   getData(SERVER_URL).then((data) => renderContent(data));
   getData(SERVER_URL).then((data) => renderOptions(data))

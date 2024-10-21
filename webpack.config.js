@@ -13,15 +13,15 @@ module.exports = {
 		admin: path.resolve(__dirname, 'src/admin-index.js'),
 	},
 	output: {
-		path: path.resolve(__dirname, 'dist'),
+		path: path.resolve(__dirname, 'docs'),
 		filename: '[name].[contenthash].js', /* set name from entry and add hash for better caching */
 		clean: true, /* clean older files */
 		assetModuleFilename: '[name][ext]'
 	},
-	devtool: 'source-map', /* add source maps */
+	/* devtool: 'source-map', */ /* add source maps */
 	devServer: {
 		static: {
-			directory: path.resolve(__dirname, 'dist') /* set a folder where the devServer will look for files */
+			directory: path.resolve(__dirname, 'docs') /* set a folder where the devServer will look for files */
 		},
 		port: 3000, /* set a custom port */
 		open: true, /* opens a new page in browser by starting the script */
