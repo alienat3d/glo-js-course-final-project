@@ -1,10 +1,32 @@
-import { getData } from "../helpers";
+import {
+  modalAppearAnimation,
+  modalDisappearAnimation,
+  getData,
+  saveData,
+  generateId
+} from "../helpers";
 
-export const renderContentFunc = () => {
+export const tableFunc = () => {
   const SERVER_URL = 'http://localhost:4545/works';
 
   const contentContainer = document.getElementById('tbody');
   const selectType = document.getElementById('typeItem');
+  const addItemButton = document.querySelector('.btn-addItem');
+  const modal = document.getElementById('modal');
+  const closeButton = modal.querySelector('.button__close');
+  const modalInputs = modal.querySelectorAll('input');
+  const saveButton = modal.querySelector('.button-ui_firm');
+  const modalHeading = modal.querySelector('.modal__header');
+
+  let editItemButtons;
+
+  const newWorkObject = {
+    type: '',
+    name: '',
+    units: '',
+    cost: 0,
+    id: 0,
+  }
 
   const renderTable = (obj) => {
     contentContainer.insertAdjacentHTML('beforeend', `
@@ -49,8 +71,12 @@ export const renderContentFunc = () => {
       });
     }
 
-    contentContainer.querySelectorAll('.action-change').forEach(button => {
+    editItemButtons = document.querySelectorAll('.action-change');
+
+    editItemButtons.forEach(button => {
       button.addEventListener('click', () => {
+        modalHeading.
+        openModal();
       })
     });
   }
@@ -64,6 +90,51 @@ export const renderContentFunc = () => {
       `);
     });
   }
+
+  const openModal = () => {
+    setTimeout(() => modal.classList.add('modal-opened'), 50);
+    modalAppearAnimation(modal);
+  }
+
+  const closeModal = () => {
+    modalDisappearAnimation(modal);
+    setTimeout(() => modal.classList.remove('modal-opened'), 200);
+  }
+
+  const saveNewWork = () => {
+    newWorkObject.id = generateId();
+    newWorkObject.type = modalInputs[0].value;
+    newWorkObject.name = modalInputs[1].value;
+    newWorkObject.units = modalInputs[2].value;
+    newWorkObject.cost = +modalInputs[3].value;
+    saveData(SERVER_URL, 'POST', newWorkObject);
+  };
+
+  const clearForm = () => {
+    modalInputs[0].value = '';
+    modalInputs[1].value = '';
+    modalInputs[2].value = '';
+    modalInputs[3].value = '';
+  }
+
+  /*       button.addEventListener('click', (evt) => {
+          const tgt = evt.target;
+          const currentId = tgt.closest('.table__row').querySelector('.table__id').textContent;
+          console.log('currentId', currentId)
+          openModal();
+        }) */
+
+  addItemButton.addEventListener('click', openModal);
+  closeButton.addEventListener('click', closeModal);
+
+  saveButton.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    saveNewWork();
+    clearForm();
+    // type = selectType.value;
+    setTimeout(() => getData(SERVER_URL)
+      .then((data) => renderContent(data, selectType.value)), 0);
+  });
 
   getData(SERVER_URL).then((data) => renderContent(data));
   getData(SERVER_URL).then((data) => renderOptions(data))

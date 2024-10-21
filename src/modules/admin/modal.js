@@ -9,6 +9,7 @@ import {
 export const modalFunc = () => {
   const SERVER_URL = 'http://localhost:4545/works';
 
+  const selectType = document.getElementById('typeItem');
   const contentContainer = document.querySelector('tbody');
   const addItemButton = document.querySelector('.btn-addItem');
   const modal = document.getElementById('modal');
@@ -22,6 +23,13 @@ export const modalFunc = () => {
     units: '',
     cost: 0,
     id: 0,
+  }
+
+  // let type;
+
+  const openModal = () => {
+    setTimeout(() => modal.classList.add('modal-opened'), 50);
+    modalAppearAnimation(modal);
   }
 
   const closeModal = () => {
@@ -82,24 +90,29 @@ export const modalFunc = () => {
 
     if (currentType === 'Все услуги') {
       data.forEach(obj => renderTable(obj));
-    } else {
+    } else if (currentType !== 'Все услуги') {
       data.forEach(obj => {
         if (obj.type === currentType) renderTable(obj);
       });
     }
+
+
+/*       button.addEventListener('click', (evt) => {
+        const tgt = evt.target;
+        const currentId = tgt.closest('.table__row').querySelector('.table__id').textContent;
+        console.log('currentId', currentId)
+        openModal();
+      }) */
   }
 
-  addItemButton.addEventListener('click', () => {
-    setTimeout(() => modal.classList.add('modal-opened'), 50);
-    modalAppearAnimation(modal);
-  });
-
+  addItemButton.addEventListener('click', openModal);
   closeButton.addEventListener('click', closeModal);
 
   saveButton.addEventListener('click', (evt) => {
     evt.preventDefault();
     saveNewWork();
     clearForm();
-    getData(SERVER_URL).then((data) => renderContent(data));
+    // type = selectType.value;
+    getData(SERVER_URL).then((data) => renderContent(data, selectType.value));
   });
 }

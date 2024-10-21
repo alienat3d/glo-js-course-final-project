@@ -1,7 +1,8 @@
 import { getCookie } from "./modules/helpers";
 import { authFunc } from "./modules/admin/auth";
-import { renderContentFunc } from "./modules/admin/render-content";
-import { modalFunc } from "./modules/admin/modal";
+// import { renderContentFunc } from "./modules/admin/render-content";
+// import { modalFunc } from "./modules/admin/modal";
+import { tableFunc } from "./modules/admin/table";
 
 const currentURL = window.location.pathname;
 const currentHost = window.location.host;
@@ -22,6 +23,7 @@ if ((currentURL === '/admin/index.html' || currentURL === '/admin/') && isAuth) 
 if (currentURL === '/admin/index.html' || currentURL === '/admin/') {
   authFunc();
 } else {
-  renderContentFunc();
-  modalFunc();
+  tableFunc();
+  // renderContentFunc();
+  // modalFunc();
 }
