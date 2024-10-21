@@ -27,7 +27,7 @@ export const authFunc = () => {
     if (data[0].password === passwordInputValue && !isLoginCorrect) {
       return;
     } else if (data[0].password === passwordInputValue && isLoginCorrect) {
-      document.cookie = `auth=true;samesite=strict;max-age=25920`;
+      document.cookie = `auth=true;samesite=strict;max-age=777600`;
       window.location.href = `http://${currentHost}/admin/table.html`;
     } else {
       passwordWarning.classList.remove('hidden');
