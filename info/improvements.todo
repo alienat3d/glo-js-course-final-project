@@ -64,4 +64,6 @@ Improvements:
     - Add select instead of input to modal for types where all types exist in DB;
     - Add an ID generator for the IDs of the new items; @done
     - Add toaster notification for successful addition of item;
-    - Render chosen works type after adding a new one;
+    - Render chosen works type after adding a new one; @done
+  [bugfixing]:
+    - (table.js) When editing a record in a modal window, a "try...catch error" occurs, although the database is actually being updated;

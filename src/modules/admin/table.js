@@ -77,6 +77,18 @@ export const tableFunc = () => {
     }
 
     editItemButtons = document.querySelectorAll('.action-change');
+
+    setTimeout(() => editItemButtons.forEach(button => {
+      button.addEventListener('click', (evt) => {
+        isEdit = true;
+        const tgt = evt.target;
+        modalHeading.textContent = modalTitlesArray[1];
+        saveButton.textContent = modalButtonTextArray[1];
+        currentItemId = tgt.closest('.table__row').querySelector('.table__id').textContent;
+        fillFormFromDB(currentItemId);
+        openModal();
+      })
+    }), 200);
   }
 
   const renderOptions = (data) => {
@@ -109,7 +121,13 @@ export const tableFunc = () => {
   };
 
   const editWork = (id) => {
-    console.log(id);
+    newWorkObject.type = modalInputs[0].value;
+    newWorkObject.name = modalInputs[1].value;
+    newWorkObject.units = modalInputs[2].value;
+    newWorkObject.cost = +modalInputs[3].value;
+    saveData(`${SERVER_URL}/${id}`, 'PATCH', newWorkObject);
+    closeModal();
+    isEdit = false;
   }
 
   const clearForm = () => {
@@ -141,24 +159,13 @@ export const tableFunc = () => {
       .then((data) => renderContent(data, selectType.value)), 0);
   });
 
-  setTimeout(() => editItemButtons.forEach(button => {
-    button.addEventListener('click', (evt) => {
-      isEdit = true;
-      const tgt = evt.target;
-      modalHeading.textContent = modalTitlesArray[1];
-      saveButton.textContent = modalButtonTextArray[1];
-      currentItemId = tgt.closest('.table__row').querySelector('.table__id').textContent;
-      fillFormFromDB(currentItemId);
-      openModal();
-    })
-  }), 200);
-
   const fillFormFromDB = (id) => {
     getData(`${SERVER_URL}/${id}`).then((data) => {
       modalInputs[0].value = data.type;
       modalInputs[1].value = data.name;
       modalInputs[2].value = data.units;
       modalInputs[3].value = data.cost;
+      newWorkObject.id = data.id;
     });
   }
 
