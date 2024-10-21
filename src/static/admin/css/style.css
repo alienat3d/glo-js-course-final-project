@@ -71,8 +71,20 @@ body {
 }
 
 .svg_ui {
-  display: inline-flex;
   margin: 3px;
+  display: inline-flex;
+}
+
+.table-th .svg_ui {
+  opacity: 0;
+  transition: all .25s ease-in-out;
+}
+.ascending .svg_ui {
+  opacity: 1;
+}
+.descending .svg_ui {
+  opacity: 1;
+  transform: rotate(180deg) translateX(-3px);
 }
 
 .btn-addItem .svg_ui {
@@ -302,7 +314,6 @@ body {
   fill: var(--red_color);
 }
 
-
 .btn-addItem {
   width: 216px;
   height: 44px;
@@ -391,7 +402,6 @@ body {
   text-decoration: underline;
 }
 
-
 /*   Таблица клиентов   */
 .table__wrapper {
   display: flex;
@@ -406,6 +416,7 @@ body {
 }
 
 .table-th {
+  position: relative;
   padding: 8px 20px;
   text-align: left;
   color: var(--txt_grey);
@@ -442,9 +453,9 @@ body {
   min-width: 130px;
 }
 
-.sorting {
+/* .sorting {
   transform: rotate(180deg);
-}
+} */
 
 .tbody {
   background-color: white;
@@ -479,6 +490,10 @@ body {
 
 .table-units {
   padding-left: 41px;
+}
+
+.table-cost {
+  padding-left: 30px;
 }
 
 .icon-sort {

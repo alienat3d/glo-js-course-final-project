@@ -9,6 +9,12 @@ import {
 export const tableFunc = () => {
   const SERVER_URL = 'http://localhost:4545/works';
 
+  const tableHeaders = document.querySelectorAll('.table-th:not(.th-handler)');
+  const idHeader = document.querySelector('.th-id');
+  const typeHeader = document.querySelector('.th-type');
+  const nameHeader = document.querySelector('.th-name');
+  const unitsHeader = document.querySelector('.th-units');
+  const costHeader = document.querySelector('.th-cost');
   const contentContainer = document.getElementById('tbody');
   const selectType = document.getElementById('typeItem');
   const addItemButton = document.querySelector('.btn-addItem');
@@ -19,10 +25,12 @@ export const tableFunc = () => {
   const modalHeading = modal.querySelector('.modal__header');
 
   let currentItemId;
+  let lastClickedHeader;
   let isEdit = false;
+  let isSort = true;
 
   const modalTitlesArray = ['Добавить новую услугу', 'Редактировать услугу'];
-  const modalButtonTextArray = ['Добавить новую услугу', 'Редактировать услугу'];
+  const modalButtonTextArray = ['Добавить услугу', 'Редактировать услугу'];
 
   const newWorkObject = {
     type: '',
@@ -147,6 +155,32 @@ export const tableFunc = () => {
     modalInputs[3].value = '';
   }
 
+  const sortAndRenderItems = (sortOption) => {
+    getData(`${SERVER_URL}?_sort=${isSort ? sortOption : `-${sortOption}`}`)
+      .then((data) => renderContent(data));
+  }
+
+  const activateHeaderSort = (sortOption, header) => {
+    if (lastClickedHeader === header) {
+      isSort = !isSort;
+    } else {
+      isSort = true;
+      lastClickedHeader = header;
+    }
+    sortAndRenderItems(sortOption);
+    tableHeaders.forEach(header => {
+      header.classList.remove('ascending');
+      header.classList.remove('descending');
+    });
+    if (isSort) {
+      header.classList.remove('descending');
+      header.classList.add('ascending');
+    } else {
+      header.classList.remove('ascending');
+      header.classList.add('descending');
+    }
+  }
+
   addItemButton.addEventListener('click', () => {
     modalHeading.textContent = modalTitlesArray[0];
     saveButton.textContent = modalButtonTextArray[0];
@@ -179,10 +213,16 @@ export const tableFunc = () => {
     });
   }
 
-  getData(SERVER_URL).then((data) => renderContent(data));
+  sortAndRenderItems('type');
   getData(SERVER_URL).then((data) => renderOptions(data))
     .then(selectType.addEventListener('change', (evt) => {
       const type = evt.target.value;
       getData(SERVER_URL).then((data) => renderContent(data, type));
     }));
+
+  idHeader.addEventListener('click', () => activateHeaderSort('id', idHeader));
+  typeHeader.addEventListener('click', () => activateHeaderSort('type', typeHeader));
+  nameHeader.addEventListener('click', () => activateHeaderSort('name', nameHeader));
+  unitsHeader.addEventListener('click', () => activateHeaderSort('units', unitsHeader));
+  costHeader.addEventListener('click', () => activateHeaderSort('cost', costHeader));
 }

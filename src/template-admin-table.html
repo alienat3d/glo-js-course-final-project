@@ -7,7 +7,9 @@
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <title><%= htmlWebpackPlugin.options.title %></title>
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
 
   <!-- ==| STYLES |== -->
   <link rel="stylesheet" href="./css/style.css">
@@ -31,23 +33,41 @@
         <table id="table" class="table">
           <thead>
             <tr>
-              <th class="table-th th-id">ID<span class="svg_ui"><svg class="icon-sort">
+              <th class="table-th th-id">ID
+                <span class="svg_ui">
+                  <svg class="icon-sort">
                     <use xlink:href="./images/sprite.svg#sorting"></use>
-                  </svg></span>
+                  </svg>
+                </span>
               </th>
-              <th class="table-th th-type">Тип услуги<span class="svg_ui"><svg class="icon-sort">
+              <th class="table-th th-type ascending">Тип услуги
+                <span class="svg_ui">
+                  <svg class="icon-sort">
                     <use xlink:href="./images/sprite.svg#sorting"></use>
-                  </svg></span>
+                  </svg>
+                </span>
               </th>
-              <th class="table-th th-name">Виды работ<span class="svg_ui"><svg class="icon-sort">
+              <th class="table-th th-name">Виды работ
+                <span class="svg_ui">
+                  <svg class="icon-sort">
                     <use xlink:href="./images/sprite.svg#sorting"></use>
-                  </svg></span>
+                  </svg>
+                </span>
               </th>
-              <th class="table-th th-units">Единицы измерения<span class="svg_ui"><svg class="icon-sort">
+              <th class="table-th th-units">Единицы измерения
+                <span class="svg_ui">
+                  <svg class="icon-sort">
                     <use xlink:href="./images/sprite.svg#sorting"></use>
-                  </svg></span>
+                  </svg>
+                </span>
               </th>
-              <th class="table-th th-cost">Цена за единицу</th>
+              <th class="table-th th-cost">Цена за единицу
+                <span class="svg_ui">
+                  <svg class="icon-sort">
+                    <use xlink:href="./images/sprite.svg#sorting"></use>
+                  </svg>
+                </span>
+              </th>
               <th class="table-th th-handler">Действия</th>
             </tr>
           </thead>
