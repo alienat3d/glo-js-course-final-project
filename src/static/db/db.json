@@ -641,7 +641,8 @@
   "users": [
     {
       "login": "user",
-      "password": "12345678"
+      "password": "12345678",
+      "id": "6ec3"
     }
   ]
 }

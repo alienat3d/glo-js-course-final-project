@@ -82,6 +82,14 @@ const generateId = () => {
   return numbersString;
 }
 
+const debounce = (func, delay = 700) => {
+	let timer;
+	return (...args) => {
+		clearTimeout(timer);
+		timer = setTimeout(() => { func.apply(this, args) }, delay);
+	}
+}
+
 export {
   toggleActiveClass,
   measureWindowWidth,
@@ -91,5 +99,6 @@ export {
   getData,
   saveData,
   getCookie,
-  generateId
+  generateId,
+  debounce
 };

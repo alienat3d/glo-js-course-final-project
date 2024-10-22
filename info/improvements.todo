@@ -66,7 +66,7 @@ Improvements:
     - Render chosen works type after adding a new one; @done
   [bugfixing]:
     - (table.js) When editing a record in a modal window, a "try...catch error" occurs, although the database is actually being updated;
-    - (table.js) Sorting all type of work before rendering;
+    - (table.js) Sorting all type of work before rendering; @done
   [Additions]:
     - Create a list of users similar to table.html with the same functionality;
     - Add toaster notification for successful addition of item;

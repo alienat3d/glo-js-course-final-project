@@ -104,6 +104,7 @@ body {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -259,6 +260,7 @@ body {
 
 #typeItem {
   cursor: pointer;
+  height: 25px;
 }
 
 .search {
@@ -271,21 +273,29 @@ body {
 }
 
 .search__button {
-  cursor: pointer;
   position: absolute;
   top: 1px;
   right: 2px;
   border: 0;
-  background: none;
-  transition: transform .25s ease;
+  background: 0;
 }
-.search__button:hover {
-  transform: scale(1.2);
+
+.search__button.icon-clear {
+  cursor: pointer;
+  margin-top: 1px;
+  top: 4px;
+  right: 4px;
 }
 
 .icon-search {
   width: 23px;
   height: 23px;
+}
+
+.search__button.icon-clear .icon-search {
+  width: 16px;
+  height: 16px;
+  fill: var(--red_color);
 }
 
 .tooltip {

@@ -3,12 +3,17 @@ import {
   modalDisappearAnimation,
   getData,
   saveData,
-  generateId
+  generateId,
+  debounce
 } from "../helpers";
 
 export const tableFunc = () => {
   const SERVER_URL = 'http://localhost:4545/works';
 
+  const searchInput = document.querySelector('.search__input');
+  const searchButton = document.querySelector('.search__button');
+  const searchIcon = document.querySelector('.icon-search');
+  const searchIconUse = searchIcon.querySelector('use');
   const tableHeaders = document.querySelectorAll('.table-th:not(.th-handler)');
   const idHeader = document.querySelector('.th-id');
   const typeHeader = document.querySelector('.th-type');
@@ -181,6 +186,21 @@ export const tableFunc = () => {
     }
   }
 
+  const changeSearchIcon = () => {
+    if (!searchInput.value) {
+      searchIconUse.href.baseVal = './images/sprite.svg#search';
+      searchButton.classList.remove('icon-clear');
+    } else {
+      searchIconUse.href.baseVal = './images/sprite.svg#remove';
+      searchButton.classList.add('icon-clear');
+    }
+  }
+
+  const debounceSearch = debounce(() => {
+    getData(`${SERVER_URL}?q=${searchInput.value}`)
+      .then((data) => renderContent(data, selectType.value));
+  }, 300);
+
   addItemButton.addEventListener('click', () => {
     modalHeading.textContent = modalTitlesArray[0];
     saveButton.textContent = modalButtonTextArray[0];
@@ -225,4 +245,26 @@ export const tableFunc = () => {
   nameHeader.addEventListener('click', () => activateHeaderSort('name', nameHeader));
   unitsHeader.addEventListener('click', () => activateHeaderSort('units', unitsHeader));
   costHeader.addEventListener('click', () => activateHeaderSort('cost', costHeader));
+
+  // searchInput.addEventListener('input', () => {
+  //   changeSearchIcon();
+  //   /* setTimeout(() => {
+  //     console.log(searchInput.value);
+  //     getData(`${SERVER_URL}?q=${searchInput.value}`)
+  //       .then((data) => renderContent(data));
+  //   }, 1000); */
+
+  //   debounceSearch();
+  // });
+  searchInput.addEventListener('input', () => {
+    changeSearchIcon();
+    debounceSearch();
+  });
+
+  searchButton.addEventListener('click', () => {
+    searchInput.value = '';
+    changeSearchIcon();
+    setTimeout(() => getData(SERVER_URL)
+      .then((data) => renderContent(data, selectType.value)), 0);
+  })
 }
