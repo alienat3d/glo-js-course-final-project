@@ -79,9 +79,11 @@ body {
   opacity: 0;
   transition: all .25s ease-in-out;
 }
+
 .ascending .svg_ui {
   opacity: 1;
 }
+
 .descending .svg_ui {
   opacity: 1;
   transform: rotate(180deg) translateX(-3px);
@@ -248,6 +250,42 @@ body {
   .title-page {
     margin: 30px 0 4px;
   }
+}
+
+.control-panel {
+  display: flex;
+  justify-content: space-between;
+}
+
+#typeItem {
+  cursor: pointer;
+}
+
+.search {
+  position: relative;
+}
+
+.search__input {
+  padding: 2px 26px 1px 4px;
+  min-width: 300px;
+}
+
+.search__button {
+  cursor: pointer;
+  position: absolute;
+  top: 1px;
+  right: 2px;
+  border: 0;
+  background: none;
+  transition: transform .25s ease;
+}
+.search__button:hover {
+  transform: scale(1.2);
+}
+
+.icon-search {
+  width: 23px;
+  height: 23px;
 }
 
 .tooltip {
